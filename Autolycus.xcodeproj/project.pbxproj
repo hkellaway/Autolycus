@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DC6E03C81FAD33250040BDBC /* Autolycus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6E03BE1FAD33250040BDBC /* Autolycus.framework */; };
-		DC6E03CD1FAD33250040BDBC /* AutolycusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E03CC1FAD33250040BDBC /* AutolycusTests.swift */; };
 		DC6E03DE1FAD349D0040BDBC /* Autolycus.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6E03DC1FAD348E0040BDBC /* Autolycus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC6E03E01FAD35390040BDBC /* Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E03DF1FAD35390040BDBC /* Autolycus.swift */; };
+		DC6E04051FAD38E00040BDBC /* AutolycusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E04031FAD38D90040BDBC /* AutolycusTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,11 +26,11 @@
 /* Begin PBXFileReference section */
 		DC6E03BE1FAD33250040BDBC /* Autolycus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Autolycus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6E03C71FAD33250040BDBC /* AutolycusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutolycusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC6E03CC1FAD33250040BDBC /* AutolycusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolycusTests.swift; sourceTree = "<group>"; };
-		DC6E03CE1FAD33250040BDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC6E03DC1FAD348E0040BDBC /* Autolycus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Autolycus.h; sourceTree = "<group>"; };
 		DC6E03DD1FAD348E0040BDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC6E03DF1FAD35390040BDBC /* Autolycus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autolycus.swift; sourceTree = "<group>"; };
+		DC6E04031FAD38D90040BDBC /* AutolycusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolycusTests.swift; sourceTree = "<group>"; };
+		DC6E04041FAD38D90040BDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				DC6E03DB1FAD348E0040BDBC /* Sources */,
-				DC6E03CB1FAD33250040BDBC /* AutolycusTests */,
+				DC6E04021FAD38D90040BDBC /* Tests */,
 				DC6E03BF1FAD33250040BDBC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,15 +70,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DC6E03CB1FAD33250040BDBC /* AutolycusTests */ = {
-			isa = PBXGroup;
-			children = (
-				DC6E03CC1FAD33250040BDBC /* AutolycusTests.swift */,
-				DC6E03CE1FAD33250040BDBC /* Info.plist */,
-			);
-			path = AutolycusTests;
-			sourceTree = "<group>";
-		};
 		DC6E03DB1FAD348E0040BDBC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +78,15 @@
 				DC6E03DD1FAD348E0040BDBC /* Info.plist */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		DC6E04021FAD38D90040BDBC /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DC6E04031FAD38D90040BDBC /* AutolycusTests.swift */,
+				DC6E04041FAD38D90040BDBC /* Info.plist */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC6E03CD1FAD33250040BDBC /* AutolycusTests.swift in Sources */,
+				DC6E04051FAD38E00040BDBC /* AutolycusTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +384,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = AutolycusTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harlankellaway.AutolycusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -398,7 +398,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = AutolycusTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harlankellaway.AutolycusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
