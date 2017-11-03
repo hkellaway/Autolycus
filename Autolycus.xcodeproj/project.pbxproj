@@ -10,6 +10,7 @@
 		DC6E03C81FAD33250040BDBC /* Autolycus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6E03BE1FAD33250040BDBC /* Autolycus.framework */; };
 		DC6E03CD1FAD33250040BDBC /* AutolycusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E03CC1FAD33250040BDBC /* AutolycusTests.swift */; };
 		DC6E03DE1FAD349D0040BDBC /* Autolycus.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6E03DC1FAD348E0040BDBC /* Autolycus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC6E03E01FAD35390040BDBC /* Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E03DF1FAD35390040BDBC /* Autolycus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		DC6E03CE1FAD33250040BDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC6E03DC1FAD348E0040BDBC /* Autolycus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Autolycus.h; sourceTree = "<group>"; };
 		DC6E03DD1FAD348E0040BDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC6E03DF1FAD35390040BDBC /* Autolycus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autolycus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		DC6E03DB1FAD348E0040BDBC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DC6E03DF1FAD35390040BDBC /* Autolycus.swift */,
 				DC6E03DC1FAD348E0040BDBC /* Autolycus.h */,
 				DC6E03DD1FAD348E0040BDBC /* Info.plist */,
 			);
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					DC6E03BD1FAD33250040BDBC = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					DC6E03C61FAD33250040BDBC = {
@@ -196,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC6E03E01FAD35390040BDBC /* Autolycus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +339,7 @@
 		DC6E03D31FAD33250040BDBC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -346,6 +352,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.harlankellaway.Autolycus;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,6 +361,7 @@
 		DC6E03D41FAD33250040BDBC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -374,6 +382,7 @@
 		DC6E03D61FAD33250040BDBC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AutolycusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -387,6 +396,7 @@
 		DC6E03D71FAD33250040BDBC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AutolycusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
