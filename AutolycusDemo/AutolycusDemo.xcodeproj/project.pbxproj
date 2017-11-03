@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		468C39D3979B0005670464F4 /* Pods_AutolycusDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CCCCF734B381A91D75E6EF7 /* Pods_AutolycusDemo.framework */; };
 		DC6E03EE1FAD35F30040BDBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E03ED1FAD35F30040BDBC /* AppDelegate.swift */; };
 		DC6E03F01FAD35F30040BDBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E03EF1FAD35F30040BDBC /* ViewController.swift */; };
 		DC6E03F31FAD35F30040BDBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC6E03F11FAD35F30040BDBC /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8CCCCF734B381A91D75E6EF7 /* Pods_AutolycusDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutolycusDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E59D5FE45F6B8FF55274B5E /* Pods-AutolycusDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutolycusDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutolycusDemo/Pods-AutolycusDemo.release.xcconfig"; sourceTree = "<group>"; };
 		DC6E03EA1FAD35F30040BDBC /* AutolycusDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutolycusDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6E03ED1FAD35F30040BDBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC6E03EF1FAD35F30040BDBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		DC6E03F41FAD35F30040BDBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC6E03F71FAD35F30040BDBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC6E03F91FAD35F30040BDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F266CDDD6E32F418C50C3732 /* Pods-AutolycusDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutolycusDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutolycusDemo/Pods-AutolycusDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468C39D3979B0005670464F4 /* Pods_AutolycusDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E879464DF5874DE693708EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CCCCF734B381A91D75E6EF7 /* Pods_AutolycusDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DC6E03E11FAD35F30040BDBC = {
 			isa = PBXGroup;
 			children = (
 				DC6E03EC1FAD35F30040BDBC /* AutolycusDemo */,
 				DC6E03EB1FAD35F30040BDBC /* Products */,
+				E334858B9F6AD548C55B0768 /* Pods */,
+				0E879464DF5874DE693708EC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = AutolycusDemo;
 			sourceTree = "<group>";
 		};
+		E334858B9F6AD548C55B0768 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F266CDDD6E32F418C50C3732 /* Pods-AutolycusDemo.debug.xcconfig */,
+				8E59D5FE45F6B8FF55274B5E /* Pods-AutolycusDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC6E03FC1FAD35F30040BDBC /* Build configuration list for PBXNativeTarget "AutolycusDemo" */;
 			buildPhases = (
+				F1CEAA8FF814389E35EF027E /* [CP] Check Pods Manifest.lock */,
 				DC6E03E61FAD35F30040BDBC /* Sources */,
 				DC6E03E71FAD35F30040BDBC /* Frameworks */,
 				DC6E03E81FAD35F30040BDBC /* Resources */,
+				363062B580D3ED508CFEE9FC /* [CP] Embed Pods Frameworks */,
+				13D5E1D9C604C8484861F77F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +123,7 @@
 				TargetAttributes = {
 					DC6E03E91FAD35F30040BDBC = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13D5E1D9C604C8484861F77F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutolycusDemo/Pods-AutolycusDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		363062B580D3ED508CFEE9FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutolycusDemo/Pods-AutolycusDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1CEAA8FF814389E35EF027E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DC6E03E61FAD35F30040BDBC /* Sources */ = {
@@ -272,13 +347,16 @@
 		};
 		DC6E03FD1FAD35F30040BDBC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F266CDDD6E32F418C50C3732 /* Pods-AutolycusDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AutolycusDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harlankellaway.AutolycusDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,13 +364,16 @@
 		};
 		DC6E03FE1FAD35F30040BDBC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E59D5FE45F6B8FF55274B5E /* Pods-AutolycusDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AutolycusDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.harlankellaway.AutolycusDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
