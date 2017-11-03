@@ -1,0 +1,16 @@
+PODS:
+  - Autolycus (0.0.1)
+
+DEPENDENCIES:
+  - Autolycus (from `../`)
+
+EXTERNAL SOURCES:
+  Autolycus:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Autolycus: 8d071708a80fd82842032d5159e668eae57ba890
+
+PODFILE CHECKSUM: 268ca920c6bde932fb42b685f1d7c8ae48bec07c
+
+COCOAPODS: 1.2.1

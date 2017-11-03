@@ -1,0 +1,6 @@
+framework module Autolycus {
+  umbrella header "Autolycus-umbrella.h"
+
+  export *
+  module * { export * }
+}
