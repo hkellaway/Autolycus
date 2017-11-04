@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
   s.name             = "Autolycus"
   s.version          = "0.1.0"
-  s.summary          = "Autolayout DSL"
-  s.description      = "Autolayout DSL." 
+  s.summary          = "Autolayout DSL for writing layout and constraints programmatically"
+  s.description      = "Autolayout DSL for writing layout and constraints programmatically."
   s.homepage         = "https://github.com/hkellaway/Autolycus"
   s.license          = { :type => "MIT", :file => "LICENSE" }
   s.author           = { "Harlan Kellaway" => "hello@harlankellaway.com" }
