@@ -51,13 +51,15 @@ extension NSLayoutConstraint {
     ///
     /// - Returns: Invalid constraint.
     static func invalid() -> NSLayoutConstraint {
-        return NSLayoutConstraint(item: NSObject(),
-                                  attribute: .notAnAttribute,
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return NSLayoutConstraint(item: view,
+                                  attribute: .width,
                                   relatedBy: .equal,
                                   toItem: nil,
                                   attribute: .notAnAttribute,
-                                  multiplier: 0,
-                                  constant: 0)
+                                  multiplier: 1,
+                                  constant: 10)
     }
     
 }

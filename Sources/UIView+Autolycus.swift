@@ -53,12 +53,15 @@ public extension UIView {
     ///   - width: Width.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraint.
     @discardableResult
     public func width(_ width: CGFloat,
                       priority: UILayoutPriority = .required,
-                      isActive: Bool = true) -> NSLayoutConstraint {
+                      isActive: Bool = true,
+                      logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
         guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
             return NSLayoutConstraint.invalid()
         }
         
@@ -71,12 +74,15 @@ public extension UIView {
     ///   - height: Height.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraint.
     @discardableResult
     public func height(_ height: CGFloat,
                        priority: UILayoutPriority = .required,
-                       isActive: Bool = true) -> NSLayoutConstraint {
+                       isActive: Bool = true,
+                       logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
         guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
             return NSLayoutConstraint.invalid()
         }
         
@@ -90,13 +96,16 @@ public extension UIView {
     ///   - offset: Point offset from center. Defaults to zero.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
     public func inCenter(of view: UIView,
                          offset: CGPoint = .zero,
                          priority: UILayoutPriority = .required,
-                         isActive: Bool = true) -> [NSLayoutConstraint] {
+                         isActive: Bool = true,
+                         logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
         guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
             return []
         }
         
@@ -114,23 +123,29 @@ public extension UIView {
     
     // MARK: - Convenience
     
-    /// Constrains the view to provided width and returns same instance.
+    /// Constrains the view to the provided width and returns same instance.
     ///
-    /// - Parameter value: Width.
+    /// - Parameters:
+    ///   - value: Width.
+    ///   - logger: Logger for issues enacting constraints.
     /// - Returns: View instance acted upon.
     @discardableResult
-    public func toWidth(_ value: CGFloat) -> Self {
+    public func toWidth(_ value: CGFloat,
+                        logger: Logger = AutolycusLogger.shared) -> Self {
         width(value)
         return self
     }
     
     /// Constrains the view to the provided height and returns same instance.
     ///
-    /// - Parameter value: Height.
-    /// - Returns: View instance acted upn.
+    /// - Parameters:
+    ///   - value: Height.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: View instance acted upon.
     @discardableResult
-    public func toHeight(_ value: CGFloat) -> Self {
-        height(value)
+    public func toHeight(_ value: CGFloat,
+                         logger: Logger = AutolycusLogger.shared) -> Self {
+        height(value, logger: logger)
         return self
     }
     
@@ -139,11 +154,14 @@ public extension UIView {
     /// - Parameters:
     ///   - widthValue: Width.
     ///   - heightValue: Height.
+    ///   - logger: Logger for issues enacting constraints.
     /// - Returns: View instance acted upon.
     @discardableResult
-    public func toSize(_ widthValue: CGFloat, _ heightValue: CGFloat) -> Self {
-        toWidth(widthValue)
-        toHeight(heightValue)
+    public func toSize(_ widthValue: CGFloat,
+                       _ heightValue: CGFloat,
+                       logger: Logger = AutolycusLogger.shared) -> Self {
+        toWidth(widthValue, logger: logger)
+        toHeight(heightValue, logger: logger)
         return self
     }
     
