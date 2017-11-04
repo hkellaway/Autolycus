@@ -10,7 +10,6 @@
 		DC47CAA41FAE25CD006E6F9A /* NSLayoutConstraint+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC47CAA21FAE25C3006E6F9A /* NSLayoutConstraint+TestHelpers.swift */; };
 		DC6E03C81FAD33250040BDBC /* Autolycus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6E03BE1FAD33250040BDBC /* Autolycus.framework */; };
 		DC6E03DE1FAD349D0040BDBC /* Autolycus.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6E03DC1FAD348E0040BDBC /* Autolycus.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC6E03E01FAD35390040BDBC /* Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E03DF1FAD35390040BDBC /* Autolycus.swift */; };
 		DC6E04051FAD38E00040BDBC /* ConstraintTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E04031FAD38D90040BDBC /* ConstraintTests.swift */; };
 		DC6E04081FAD57150040BDBC /* NSLayoutConstraint+Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E04071FAD57150040BDBC /* NSLayoutConstraint+Autolycus.swift */; };
 		DC6E040A1FAD59420040BDBC /* UIView+Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E04091FAD59420040BDBC /* UIView+Autolycus.swift */; };
@@ -38,7 +37,6 @@
 		DC6E03C71FAD33250040BDBC /* AutolycusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutolycusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6E03DC1FAD348E0040BDBC /* Autolycus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Autolycus.h; sourceTree = "<group>"; };
 		DC6E03DD1FAD348E0040BDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC6E03DF1FAD35390040BDBC /* Autolycus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autolycus.swift; sourceTree = "<group>"; };
 		DC6E04031FAD38D90040BDBC /* ConstraintTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstraintTests.swift; sourceTree = "<group>"; };
 		DC6E04041FAD38D90040BDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC6E04071FAD57150040BDBC /* NSLayoutConstraint+Autolycus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Autolycus.swift"; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 		DC6E03DB1FAD348E0040BDBC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				DC6E03DF1FAD35390040BDBC /* Autolycus.swift */,
 				DC6E040D1FAD61F70040BDBC /* AutolycusLogger.swift */,
 				DC6E040B1FAD61BB0040BDBC /* Logger.swift */,
 				DC6E04071FAD57150040BDBC /* NSLayoutConstraint+Autolycus.swift */,
@@ -227,7 +224,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC6E03E01FAD35390040BDBC /* Autolycus.swift in Sources */,
 				DC6E04081FAD57150040BDBC /* NSLayoutConstraint+Autolycus.swift in Sources */,
 				DC6E040A1FAD59420040BDBC /* UIView+Autolycus.swift in Sources */,
 				DC6E040E1FAD61F70040BDBC /* AutolycusLogger.swift in Sources */,
