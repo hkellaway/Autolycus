@@ -546,6 +546,26 @@ class ConstraintTests: XCTestCase {
         XCTAssertEqual(superview.secondAttribute(constraint: .top), .top)
     }
     
+    func test_constrain_sizeOfSuperview() {
+        let superview = UIView()
+        let child = UIView()
+        superview.tag = 123
+        child.tag = 456
+        
+        superview.addSubview(child)
+        child.constrain().size(of: superview)
+        
+        XCTAssertEqual(superview.firstItem(constraint: .width)?.tag, child.tag)
+        XCTAssertEqual(superview.firstAttribute(constraint: .width), .width)
+        XCTAssertEqual(superview.secondItem(constraint: .width)?.tag, superview.tag)
+        XCTAssertEqual(superview.secondAttribute(constraint: .width), .width)
+        
+        XCTAssertEqual(superview.firstItem(constraint: .height)?.tag, child.tag)
+        XCTAssertEqual(superview.firstAttribute(constraint: .height), .height)
+        XCTAssertEqual(superview.secondItem(constraint: .height)?.tag, superview.tag)
+        XCTAssertEqual(superview.secondAttribute(constraint: .height), .height)
+    }
+    
     func test_constrain_width_toSuperview() {
         let superview = UIView()
         let child = UIView()

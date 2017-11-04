@@ -303,6 +303,15 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.nilSuperviewMessage)
     }
     
+    func testLogger_logsMessage_whenMissingSuperview_sizeOfSuperview() {
+        let view = UIView()
+        let logger = FakeLogger()
+        
+        view.sizeOfSuperview(logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.nilSuperviewMessage)
+    }
+    
     func testLogger_logsMessage_whenMissingSuperview_widthToSuperview() {
         let view = UIView()
         let logger = FakeLogger()

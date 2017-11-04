@@ -897,6 +897,29 @@ public extension UIView {
         return edges(to: superview, insets: insets, priority: priority, isActive: isActive, logger: logger)
     }
     
+    /// Constraints for setting size of view to superview.
+    ///
+    /// - Parameters:
+    ///   - multiplier: Multiplizer. Defaults to 1.
+    ///   - offset: Offset. Defaults to 0.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func sizeOfSuperview(multiplier: CGFloat = 1,
+                                offset: CGFloat = 0,
+                                priority: UILayoutPriority = .required,
+                                isActive: Bool = true,
+                                logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return []
+        }
+        
+        return size(of: superview, multiplier: multiplier, offset: offset, priority: priority, isActive: isActive, logger: logger)
+    }
+    
     /// Constraints for setting origin of view to superview.
     ///
     /// - Parameters:
