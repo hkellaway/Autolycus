@@ -36,6 +36,9 @@ public final class AutolycusLogger: Logger {
     /// Default message to log when constraint attempted before preparing.
     public static var prepareForAutoLayoutMessage = "Attempt to set constraints before preparing for AutoLayout. Call constrain()."
     
+    /// Default message to log when constraint attempted to nil superview.
+    public static var nilSuperviewMessage = "Attempt to constrain to superview is nil."
+    
     // MARK: - Init/Deinit
     
     /// Creates new instance.

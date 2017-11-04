@@ -45,21 +45,4 @@ extension NSLayoutConstraint {
         return self
     }
     
-    /// Creates a new constraint with invalid values.
-    /// Intended to be used where a constraint instance
-    /// is required, but a valid constraint cannot be determined.
-    ///
-    /// - Returns: Invalid constraint.
-    static func invalid() -> NSLayoutConstraint {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return NSLayoutConstraint(item: view,
-                                  attribute: .width,
-                                  relatedBy: .equal,
-                                  toItem: nil,
-                                  attribute: .notAnAttribute,
-                                  multiplier: 1,
-                                  constant: 10)
-    }
-    
 }
