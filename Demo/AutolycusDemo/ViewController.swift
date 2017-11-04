@@ -14,7 +14,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let _ = Autolycus()
+        let myView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        myView.backgroundColor = .magenta
+        
+        view.addSubview(myView)
+        myView.constrain()
+            .toSize(200, 200)
+            .inCenter(of: view)
     }
 
 }
