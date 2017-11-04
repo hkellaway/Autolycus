@@ -224,10 +224,46 @@ public extension UIView {
                       logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
         guard isPreparedForAutoLayout() else {
             logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
-            return NSLayoutConstraint.invalid()
+            return NSLayoutConstraint()
         }
         
         return widthAnchor.constraint(equalToConstant: width).priority(priority).activate(isActive)
+    }
+    
+    /// Constraint for setting width of view.
+    ///
+    /// - Parameters:
+    ///   - view. View to base width on.
+    ///   - dimension: Dimension. Defaults to using other view's widthAnchor.
+    ///   - multiplier: Multiplier. Defaults to 1.
+    ///   - offset: Offset. Defaults to 0.
+    ///   - relation: Relation. Defaults to equal.
+    ///   - priority: Priority. Defaults to rquired.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraint.
+    @discardableResult
+    public func width(to view: UIView,
+                      dimension: NSLayoutDimension? = nil,
+                      multiplier: CGFloat = 1,
+                      offset: CGFloat = 0,
+                      relation: NSLayoutRelation = .equal,
+                      priority: UILayoutPriority = .required,
+                      isActive: Bool = true,
+                      logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return NSLayoutConstraint()
+        }
+
+        switch relation {
+        case .equal:
+            return widthAnchor.constraint(equalTo: dimension ?? view.widthAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
+        case .lessThanOrEqual:
+            return widthAnchor.constraint(lessThanOrEqualTo: dimension ?? view.widthAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
+        case .greaterThanOrEqual:
+            return widthAnchor.constraint(greaterThanOrEqualTo: dimension ?? view.widthAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
+        }
     }
     
     /// Constrant for setting height of view.
@@ -245,7 +281,7 @@ public extension UIView {
                        logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
         guard isPreparedForAutoLayout() else {
             logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
-            return NSLayoutConstraint.invalid()
+            return NSLayoutConstraint()
         }
         
         return heightAnchor.constraint(equalToConstant: height).priority(priority).activate(isActive)

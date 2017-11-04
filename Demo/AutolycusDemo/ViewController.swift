@@ -22,8 +22,10 @@ class ViewController: UIViewController {
         
         view.addSubview(secondView)
         view.addSubview(myView)
-        myView.constrain().size(of: secondView, multiplier: 0.5)
-        myView.constrain().origin(to: secondView, insets: CGVector(dx: 20, dy: 20))
+        myView.constrain().height(150)
+        myView.constrain().origin(to: secondView)
+        
+        myView.constrain().width(to: secondView, dimension: secondView.heightAnchor)
     }
 
 }

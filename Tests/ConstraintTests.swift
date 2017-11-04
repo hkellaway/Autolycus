@@ -110,4 +110,35 @@ class ConstraintTests: XCTestCase {
         XCTAssertEqual(commonAncestor.secondAttribute(constraint: .top), .top)
     }
     
+    func test_constraint_width_value() {
+        let view = UIView()
+        
+        view.constrain().width(10)
+        
+        XCTAssertEqual(view.widthConstraint()?.constant, 10)
+    }
+    
+    func test_constraint_width_toOtherview() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 124
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().width(to: commonAncestor)
+        
+        XCTAssertEqual(commonAncestor.firstItem(constraint: .width)?.tag, child.tag)
+        XCTAssertEqual(commonAncestor.firstAttribute(constraint: .width), .width)
+        XCTAssertEqual(commonAncestor.secondItem(constraint: .width)?.tag, commonAncestor.tag)
+        XCTAssertEqual(commonAncestor.secondAttribute(constraint: .width), .width)
+    }
+    
+    func test_constraint_height_value() {
+        let view = UIView()
+        
+        view.constrain().height(10)
+        
+        XCTAssertEqual(view.heightConstraint()?.constant, 10)
+    }
+    
 }
