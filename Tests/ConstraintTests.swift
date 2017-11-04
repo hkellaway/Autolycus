@@ -90,4 +90,24 @@ class ConstraintTests: XCTestCase {
         XCTAssertEqual(commonAncestor.secondAttribute(constraint: .height), .height)
     }
     
+    func test_constraint_origin_toOtherView() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 123
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().origin(to: commonAncestor)
+        
+        XCTAssertEqual(commonAncestor.firstItem(constraint: .left)?.tag, child.tag)
+        XCTAssertEqual(commonAncestor.firstAttribute(constraint: .left), .left)
+        XCTAssertEqual(commonAncestor.secondItem(constraint: .left)?.tag, commonAncestor.tag)
+        XCTAssertEqual(commonAncestor.secondAttribute(constraint: .left), .left)
+        
+        XCTAssertEqual(commonAncestor.firstItem(constraint: .top)?.tag, child.tag)
+        XCTAssertEqual(commonAncestor.firstAttribute(constraint: .top), .top)
+        XCTAssertEqual(commonAncestor.secondItem(constraint: .top)?.tag, commonAncestor.tag)
+        XCTAssertEqual(commonAncestor.secondAttribute(constraint: .top), .top)
+    }
+    
 }

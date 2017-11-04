@@ -176,6 +176,38 @@ public extension UIView {
         
         return constraints
     }
+    
+    /// Constraints for setting origin to another view's origin.
+    ///
+    /// - Parameters:
+    ///   - view: View to replicate origin of.
+    ///   - insets: Insets. Defaults to zero.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger:  Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func origin(to view: UIView,
+                       insets: CGVector = .zero,
+                       priority: UILayoutPriority = .required,
+                       isActive: Bool = true,
+                       logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return []
+        }
+        
+        let constraints = [
+            leftAnchor.constraint(equalTo: view.leftAnchor, constant: insets.dx).priority(priority),
+            topAnchor.constraint(equalTo: view.topAnchor, constant: insets.dy).priority(priority)
+        ]
+        
+        if isActive {
+            NSLayoutConstraint.activate(constraints)
+        }
+        
+        return constraints
+    }
 
     /// Constraint for setting width of view.
     ///

@@ -50,16 +50,17 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
     }
     
-    func testLogger_logsMessage_whenCannotConstrain_view_toSize() {
-        let view = UIView()
+    func testLogger_logMessage_whenCannotConstraint_origin_otherView() {
+        let view1 = UIView()
+        let view2 = UIView()
         let logger = FakeLogger()
         
-        view.toSize(CGSize(width: 10, height: 10), logger: logger)
+        view1.origin(to: view2, logger: logger)
         
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
     }
     
-    func testLogger_logsMessage_whenCannotConstrain_Width() {
+    func testLogger_logsMessage_whenCannotConstrain_Whdth() {
         let view = UIView()
         let logger = FakeLogger()
         
@@ -68,7 +69,7 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
     }
     
-    func testLogger_logsMessage_whenCannotConstrain_Height() {
+    func testLogger_logsMessage_whenCannotConstrain_height() {
         let view = UIView()
         let logger = FakeLogger()
         

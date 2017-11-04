@@ -30,6 +30,8 @@ extension UIView {
             return topConstraint()?.firstItem as? UIView
         case .bottom:
             return topConstraint()?.firstItem as? UIView
+        case .left:
+            return leftConstraint()?.firstItem as? UIView
         default:
             return nil
         }
@@ -53,6 +55,8 @@ extension UIView {
             return topConstraint()?.secondItem as? UIView
         case .bottom:
             return bottomConstraint()?.secondItem as? UIView
+        case .left:
+            return leftConstraint()?.secondItem as? UIView
         default:
             return nil
         }
@@ -76,6 +80,8 @@ extension UIView {
             return topConstraint()?.firstAttribute
         case .bottom:
             return bottomConstraint()?.firstAttribute
+        case .left:
+            return leftConstraint()?.firstAttribute
         default:
             return nil
         }
@@ -99,6 +105,8 @@ extension UIView {
             return topConstraint()?.secondAttribute
         case .bottom:
             return bottomConstraint()?.secondAttribute
+        case .left:
+            return leftConstraint()?.secondAttribute
         default:
             return nil
         }
@@ -161,6 +169,13 @@ extension UIView {
         return bottomConstraints().first
     }
     
+    func leftConstraint() -> NSLayoutConstraint? {
+        guard leftConstraints().count == 1 else {
+            return nil
+        }
+        return leftConstraints().first
+    }
+    
     func widthConstraints() -> [NSLayoutConstraint] {
         return constraints.filter { $0.firstAttribute == .width }
     }
@@ -191,6 +206,10 @@ extension UIView {
     
     func bottomConstraints() -> [NSLayoutConstraint] {
         return constraints.filter { $0.firstAttribute == .bottom }
+    }
+    
+    func leftConstraints() -> [NSLayoutConstraint] {
+        return constraints.filter { $0.firstAttribute == .left }
     }
     
 }
