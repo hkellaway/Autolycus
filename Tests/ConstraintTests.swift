@@ -294,4 +294,40 @@ class ConstraintTests: XCTestCase {
                        secondAttribute: .trailing))
     }
     
+    func test_constrain_rightToLeft() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 123
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().rightToLeft(of: commonAncestor)
+        
+        XCTAssertEqual(commonAncestor.constraints.count, 1)
+        XCTAssertTrue(commonAncestor.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .right,
+                       relation: .equal,
+                       secondItem: commonAncestor.tag,
+                       secondAttribute: .left))
+    }
+    
+    func test_constrain_right() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 124
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().right(to: commonAncestor)
+        
+        XCTAssertEqual(commonAncestor.constraints.count, 1)
+        XCTAssertTrue(commonAncestor.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .right,
+                       relation: .equal,
+                       secondItem: commonAncestor.tag,
+                       secondAttribute: .right))
+    }
+    
 }

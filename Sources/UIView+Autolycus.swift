@@ -400,7 +400,7 @@ public extension UIView {
     /// Constraints for setting leading of view to trailing of another.
     ///
     /// - Parameters:
-    ///   - view: View to constrain to trailing of.
+    ///   - view: View to constrain to.
     ///   - offset: Offset. Defaults to zero.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
@@ -426,7 +426,7 @@ public extension UIView {
     /// If no anchor is provided, defaults to leading.
     ///
     /// - Parameters:
-    ///   - view: View to constrain to trailing of.
+    ///   - view: View to constrain to.
     ///   - offset: Offset. Defaults to zero.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
@@ -459,7 +459,7 @@ public extension UIView {
     /// Constraints for setting left of view to right of another.
     ///
     /// - Parameters:
-    ///   - view: View to constrain to trailing of.
+    ///   - view: View to constrain to.
     ///   - offset: Offset. Defaults to zero.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
@@ -485,7 +485,7 @@ public extension UIView {
     /// If no anchor is provided, defaults to left.
     ///
     /// - Parameters:
-    ///   - view: View to constrain to left of.
+    ///   - view: View to constrain to.
     ///   - offset: Offset. Defaults to zero.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
@@ -518,7 +518,7 @@ public extension UIView {
     /// Constraints for setting trailing of view to leading of another.
     ///
     /// - Parameters:
-    ///   - view: View to constrain to leading of.
+    ///   - view: View to constrain to.
     ///   - offset: Offset. Defaults to zero.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
@@ -544,7 +544,7 @@ public extension UIView {
     /// If no anchor is provided, defaults to trailing.
     ///
     /// - Parameters:
-    ///   - view: View to constrain to left of.
+    ///   - view: View to constrain to.
     ///   - offset: Offset. Defaults to zero.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
@@ -571,6 +571,65 @@ public extension UIView {
             return trailingAnchor.constraint(lessThanOrEqualTo: anchor ?? view.trailingAnchor, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return trailingAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.trailingAnchor, constant: offset).priority(priority).activate(isActive)
+        }
+    }
+    
+    /// Constraints for setting right of view to left of another.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func rightToLeft(of view: UIView,
+                            offset: CGFloat = 0,
+                            relation: NSLayoutRelation = .equal,
+                            priority: UILayoutPriority = .required,
+                            isActive: Bool = true,
+                            logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return right(to: view, view.leftAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
+    }
+    
+    /// Constraints for setting right of view to anchor of another.
+    /// If no anchor is provided, defaults to right.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func right(to view: UIView,
+                      _ anchor: NSLayoutXAxisAnchor? = nil,
+                      offset: CGFloat = 0,
+                      relation: NSLayoutRelation = .equal,
+                      priority: UILayoutPriority = .required,
+                      isActive: Bool = true,
+                      logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return NSLayoutConstraint()
+        }
+        
+        switch relation {
+        case .equal:
+            return rightAnchor.constraint(equalTo: anchor ?? view.rightAnchor, constant: offset).priority(priority).activate(isActive)
+        case .lessThanOrEqual:
+            return rightAnchor.constraint(lessThanOrEqualTo: anchor ?? view.rightAnchor, constant: offset).priority(priority).activate(isActive)
+        case .greaterThanOrEqual:
+            return rightAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.rightAnchor, constant: offset).priority(priority).activate(isActive)
         }
     }
     
