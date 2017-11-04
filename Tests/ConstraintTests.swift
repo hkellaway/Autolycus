@@ -476,6 +476,106 @@ class ConstraintTests: XCTestCase {
                        secondAttribute: .centerY))
     }
     
+    func test_constrain_inCenterOfSuperview() {
+        let superview = UIView()
+        let child = UIView()
+        superview.tag = 123
+        child.tag = 456
+        
+        superview.addSubview(child)
+        child.constrain().inCenter(of: superview)
+        
+        XCTAssertEqual(superview.firstItem(constraint: .centerX)?.tag, child.tag)
+        XCTAssertEqual(superview.firstAttribute(constraint: .centerX), .centerX)
+        XCTAssertEqual(superview.secondItem(constraint: .centerX)?.tag, superview.tag)
+        XCTAssertEqual(superview.secondAttribute(constraint: .centerX), .centerX)
+        
+        XCTAssertEqual(superview.firstItem(constraint: .centerY)?.tag, child.tag)
+        XCTAssertEqual(superview.firstAttribute(constraint: .centerY), .centerY)
+        XCTAssertEqual(superview.secondItem(constraint: .centerY)?.tag, superview.tag)
+        XCTAssertEqual(superview.secondAttribute(constraint: .centerY), .centerY)
+    }
+    
+    func test_constrain_edgesToSuperview() {
+        let superview = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let child = UIView()
+        superview.tag = 124
+        child.tag = 456
+        
+        superview.addSubview(child)
+        child.constrain().edges(to: superview)
+        
+        XCTAssertEqual(superview.firstItem(constraint: .leading)?.tag, child.tag)
+        XCTAssertEqual(superview.firstAttribute(constraint: .leading), .leading)
+        XCTAssertEqual(superview.secondItem(constraint: .leading)?.tag, superview.tag)
+        XCTAssertEqual(superview.secondAttribute(constraint: .leading), .leading)
+        
+        XCTAssertEqual(superview.firstItem(constraint: .trailing)?.tag, child.tag)
+        XCTAssertEqual(superview.firstAttribute(constraint: .trailing), .trailing)
+        XCTAssertEqual(superview.secondItem(constraint: .trailing)?.tag, superview.tag)
+        XCTAssertEqual(superview.secondAttribute(constraint: .trailing), .trailing)
+        
+        XCTAssertEqual(superview.firstItem(constraint: .top)?.tag, child.tag)
+        XCTAssertEqual(superview.firstAttribute(constraint: .top), .top)
+        XCTAssertEqual(superview.secondItem(constraint: .top)?.tag, superview.tag)
+        XCTAssertEqual(superview.secondAttribute(constraint: .top), .top)
+        
+        XCTAssertEqual(superview.firstItem(constraint: .bottom)?.tag, child.tag)
+        XCTAssertEqual(superview.firstAttribute(constraint: .bottom), .bottom)
+        XCTAssertEqual(superview.secondItem(constraint: .bottom)?.tag, superview.tag)
+        XCTAssertEqual(superview.secondAttribute(constraint: .bottom), .bottom)
+    }
+    
+    func test_constrain_originToSuperview() {
+        let superview = UIView()
+        let child = UIView()
+        superview.tag = 123
+        child.tag = 456
+        
+        superview.addSubview(child)
+        child.constrain().origin(to: superview)
+        
+        XCTAssertEqual(superview.firstItem(constraint: .left)?.tag, child.tag)
+        XCTAssertEqual(superview.firstAttribute(constraint: .left), .left)
+        XCTAssertEqual(superview.secondItem(constraint: .left)?.tag, superview.tag)
+        XCTAssertEqual(superview.secondAttribute(constraint: .left), .left)
+        
+        XCTAssertEqual(superview.firstItem(constraint: .top)?.tag, child.tag)
+        XCTAssertEqual(superview.firstAttribute(constraint: .top), .top)
+        XCTAssertEqual(superview.secondItem(constraint: .top)?.tag, superview.tag)
+        XCTAssertEqual(superview.secondAttribute(constraint: .top), .top)
+    }
+    
+    func test_constrain_width_toSuperview() {
+        let superview = UIView()
+        let child = UIView()
+        superview.tag = 124
+        child.tag = 456
+        
+        superview.addSubview(child)
+        child.constrain().width(to: superview)
+        
+        XCTAssertEqual(superview.firstItem(constraint: .width)?.tag, child.tag)
+        XCTAssertEqual(superview.firstAttribute(constraint: .width), .width)
+        XCTAssertEqual(superview.secondItem(constraint: .width)?.tag, superview.tag)
+        XCTAssertEqual(superview.secondAttribute(constraint: .width), .width)
+    }
+    
+    func test_constrain_height_toSuperview() {
+        let superview = UIView()
+        let child = UIView()
+        superview.tag = 124
+        child.tag = 456
+        
+        superview.addSubview(child)
+        child.constrain().height(to: superview)
+        
+        XCTAssertEqual(superview.firstItem(constraint: .height)?.tag, child.tag)
+        XCTAssertEqual(superview.firstAttribute(constraint: .height), .height)
+        XCTAssertEqual(superview.secondItem(constraint: .height)?.tag, superview.tag)
+        XCTAssertEqual(superview.secondAttribute(constraint: .height), .height)
+    }
+    
     func test_constrain_leadingToSuperview() {
         let superview = UIView()
         let child = UIView()

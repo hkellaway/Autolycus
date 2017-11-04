@@ -25,9 +25,9 @@ class ViewController: UIViewController {
         view.addSubview(secondView)
         secondView.addSubview(myView)
         
-        myView.constrain().centerXToSuperview()
-        myView.constrain().centerYToSuperview()
-        myView.constrain().size(CGSize(width: 50, height: 50))
+        myView.constrain().widthToSuperview()
+        myView.constrain().heightToSuperview()
+        myView.constrain().centerInSuperview(offset: CGPoint(x: 50, y: 50))
     }
     
     private func manual() {

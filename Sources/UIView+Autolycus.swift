@@ -52,7 +52,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -78,7 +78,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -453,7 +453,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -479,7 +479,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -512,7 +512,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -538,7 +538,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -571,7 +571,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -597,7 +597,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -630,7 +630,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -656,7 +656,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -689,7 +689,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -715,7 +715,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -748,7 +748,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -774,7 +774,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -810,7 +810,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -835,7 +835,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
+    ///   - offset: Offset. Defaults to 0.
     ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
@@ -855,13 +855,129 @@ public extension UIView {
         return centerY(to: superview, anchor: anchor, offset: offset, priority: priority, isActive: isActive, logger: logger)
     }
     
+    /// Constraints for setting center of view to center of superview.
+    ///
+    /// - Parameters:
+    ///   - offset: Offset. Defaults to zero.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func centerInSuperview(offset: CGPoint = .zero,
+                                  priority: UILayoutPriority = .required,
+                                  isActive: Bool = true,
+                                  logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return []
+        }
+        
+        return inCenter(of: superview, offset: offset, priority: priority, isActive: isActive, logger: logger)
+    }
+    
+    /// Constraints for setting edges of view to superview.
+    ///
+    /// - Parameters:
+    ///   - insets: View to constrain to.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func edgesToSuperview(insets: UIEdgeInsets = .zero,
+                                 priority: UILayoutPriority = .required,
+                                 isActive: Bool = true,
+                                 logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return []
+        }
+        
+        return edges(to: superview, insets: insets, priority: priority, isActive: isActive, logger: logger)
+    }
+    
+    /// Constraints for setting origin of view to superview.
+    ///
+    /// - Parameters:
+    ///   - insets: Insets. Defaults to zero.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constriants.
+    @discardableResult
+    public func originToSuperview(insets: CGVector = .zero,
+                                  priority: UILayoutPriority = .required,
+                                  isActive: Bool = true,
+                                  logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return []
+        }
+        
+        return origin(to: superview, insets: insets, priority: priority, isActive: isActive, logger: logger)
+    }
+    
+    /// Constraints for setting width of view to superview.
+    ///
+    /// - Parameters:
+    ///   - dimension: Dimension.
+    ///   - multiplier: Multiplier. Defaults to 1.
+    ///   - offset: Offset. Defaults to 0.
+    ///   - relation: Relation. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func widthToSuperview( _ dimension: NSLayoutDimension? = nil,
+                                  multiplier: CGFloat = 1,
+                                  offset: CGFloat = 0,
+                                  relation: NSLayoutRelation = .equal,
+                                  priority: UILayoutPriority = .required,
+                                  isActive: Bool = true,
+                                  logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return width(to: superview, dimension: dimension, multiplier: multiplier, offset: offset, priority: priority, isActive: isActive, logger: logger)
+    }
+    
+    /// Constraints for setting height of view to superview.
+    ///
+    /// - Parameters:
+    ///   - dimension: Dimension.
+    ///   - multiplier: Multiplier. Defaults to 1.
+    ///   - offset: Offset. Defaults to 0.
+    ///   - relation: Relation. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func heightToSuperview( _ dimension: NSLayoutDimension? = nil,
+                                   multiplier: CGFloat = 1,
+                                   offset: CGFloat = 0,
+                                   relation: NSLayoutRelation = .equal,
+                                   priority: UILayoutPriority = .required,
+                                   isActive: Bool = true,
+                                   logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return height(to: superview, dimension: dimension, multiplier: multiplier, offset: offset, priority: priority, isActive: isActive, logger: logger)
+    }
+    
     /// Constraints for setting leading of view to anchor of superview.
     /// If no anchor is provided, defaults to leading.
     ///
     /// - Parameters:
-    ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
-    ///   - relation: Realtions. Defaults to equal.
+    ///   - anchor: Anchor to constrain to.
+    ///   - offset: Offset. Defaults to 0.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
     ///   - logger: Logger for issues enacting constraints.
@@ -884,9 +1000,8 @@ public extension UIView {
     /// If no anchor is provided, defaults to left.
     ///
     /// - Parameters:
-    ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
-    ///   - relation: Realtions. Defaults to equal.
+    ///   - anchor: View to constrain to.
+    ///   - offset: Offset. Defaults to 0.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
     ///   - logger: Logger for issues enacting constraints.
@@ -909,9 +1024,8 @@ public extension UIView {
     /// If no anchor is provided, defaults to trailing.
     ///
     /// - Parameters:
-    ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
-    ///   - relation: Realtions. Defaults to equal.
+    ///   - anchor: View to constrain to.
+    ///   - offset: Offset. Defaults to 0.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
     ///   - logger: Logger for issues enacting constraints.
@@ -934,9 +1048,8 @@ public extension UIView {
     /// If no anchor is provided, defaults to right.
     ///
     /// - Parameters:
-    ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
-    ///   - relation: Realtions. Defaults to equal.
+    ///   - anchor: View to constrain to.
+    ///   - offset: Offset. Defaults to 0.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
     ///   - logger: Logger for issues enacting constraints.
@@ -959,9 +1072,8 @@ public extension UIView {
     /// If no anchor is provided, defaults to top.
     ///
     /// - Parameters:
-    ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
-    ///   - relation: Realtions. Defaults to equal.
+    ///   - anchor: View to constrain to.
+    ///   - offset: Offset. Defaults to 0.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
     ///   - logger: Logger for issues enacting constraints.
@@ -984,9 +1096,8 @@ public extension UIView {
     /// If no anchor is provided, defaults to bottom.
     ///
     /// - Parameters:
-    ///   - view: View to constrain to.
-    ///   - offset: Offset. Defaults to zero.
-    ///   - relation: Realtions. Defaults to equal.
+    ///   - anchor: View to constrain to.
+    ///   - offset: Offset. Defaults to 0.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
     ///   - logger: Logger for issues enacting constraints.
