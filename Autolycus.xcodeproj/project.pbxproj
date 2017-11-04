@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC47CAA41FAE25CD006E6F9A /* NSLayoutConstraint+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC47CAA21FAE25C3006E6F9A /* NSLayoutConstraint+TestHelpers.swift */; };
 		DC6E03C81FAD33250040BDBC /* Autolycus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6E03BE1FAD33250040BDBC /* Autolycus.framework */; };
 		DC6E03DE1FAD349D0040BDBC /* Autolycus.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6E03DC1FAD348E0040BDBC /* Autolycus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC6E03E01FAD35390040BDBC /* Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E03DF1FAD35390040BDBC /* Autolycus.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC47CAA21FAE25C3006E6F9A /* NSLayoutConstraint+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+TestHelpers.swift"; sourceTree = "<group>"; };
 		DC6E03BE1FAD33250040BDBC /* Autolycus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Autolycus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6E03C71FAD33250040BDBC /* AutolycusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutolycusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6E03DC1FAD348E0040BDBC /* Autolycus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Autolycus.h; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				DC6E04181FADFCCB0040BDBC /* UIViewTests.swift */,
 				DC6E04151FADF64A0040BDBC /* LoggerTests.swift */,
 				DC6E040F1FAD66AF0040BDBC /* FakeLogger.swift */,
+				DC47CAA21FAE25C3006E6F9A /* NSLayoutConstraint+TestHelpers.swift */,
 				DC6E04121FAD69380040BDBC /* UIView+TestHelpers.swift */,
 				DC6E04041FAD38D90040BDBC /* Info.plist */,
 			);
@@ -239,6 +242,7 @@
 				DC6E041A1FADFCDB0040BDBC /* UIViewTests.swift in Sources */,
 				DC6E04141FAD693D0040BDBC /* UIView+TestHelpers.swift in Sources */,
 				DC6E04111FAD66B40040BDBC /* FakeLogger.swift in Sources */,
+				DC47CAA41FAE25CD006E6F9A /* NSLayoutConstraint+TestHelpers.swift in Sources */,
 				DC6E04051FAD38E00040BDBC /* ConstraintTests.swift in Sources */,
 				DC6E04171FADF66F0040BDBC /* LoggerTests.swift in Sources */,
 			);

@@ -303,6 +303,27 @@ public extension UIView {
         return constraints
     }
     
+    /// Constrant for setting height of view.
+    ///
+    /// - Parameters:
+    ///   - height: Height.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraint.
+    @discardableResult
+    public func height(_ height: CGFloat,
+                       priority: UILayoutPriority = .required,
+                       isActive: Bool = true,
+                       logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return heightAnchor.constraint(equalToConstant: height).priority(priority).activate(isActive)
+    }
+    
     /// Constraint for setting height of view.
     ///
     /// - Parameters:
@@ -376,25 +397,63 @@ public extension UIView {
         return constraints
     }
     
-    /// Constrant for setting height of view.
+    /// Constraints for setting leading of view to trailing of another.
     ///
     /// - Parameters:
-    ///   - height: Height.
+    ///   - view: View to constrain to trailing of.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
     ///   - priority: Priority. Defaults to required.
     ///   - isActive: Whether the constraint should be active. Defaults to true.
     ///   - logger: Logger for issues enacting constraints.
-    /// - Returns: Constraint.
+    /// - Returns: Constraints.
     @discardableResult
-    public func height(_ height: CGFloat,
-                       priority: UILayoutPriority = .required,
-                       isActive: Bool = true,
-                       logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+    public func leadingToTrailing(of view: UIView,
+                                  offset: CGFloat = 0,
+                                  relation: NSLayoutRelation = .equal,
+                                  priority: UILayoutPriority = .required,
+                                  isActive: Bool = true,
+                                  logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
         guard isPreparedForAutoLayout() else {
             logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
             return NSLayoutConstraint()
         }
         
-        return heightAnchor.constraint(equalToConstant: height).priority(priority).activate(isActive)
+        return leading(to: view, view.trailingAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
+    }
+    
+    /// Constraints for setting leading of view to anchor of another.
+    /// If no anchor is provided, defaults to leading.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to trailing of.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func leading(to view: UIView,
+                        _ anchor: NSLayoutXAxisAnchor? = nil,
+                        offset: CGFloat = 0,
+                        relation: NSLayoutRelation = .equal,
+                        priority: UILayoutPriority = .required,
+                        isActive: Bool = true,
+                        logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return NSLayoutConstraint()
+        }
+        
+        switch relation {
+        case .equal:
+            return leadingAnchor.constraint(equalTo: anchor ?? view.leadingAnchor, constant: offset).priority(priority).activate(isActive)
+        case .lessThanOrEqual:
+            return leadingAnchor.constraint(lessThanOrEqualTo: anchor ?? view.leadingAnchor, constant: offset).priority(priority).activate(isActive)
+        case .greaterThanOrEqual:
+            return leadingAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.leadingAnchor, constant: offset).priority(priority).activate(isActive)
+        }
     }
     
     // MARK: - Convenience

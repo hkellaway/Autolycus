@@ -90,7 +90,7 @@ class ConstraintTests: XCTestCase {
         XCTAssertEqual(commonAncestor.secondAttribute(constraint: .height), .height)
     }
     
-    func test_constraint_origin_toOtherView() {
+    func test_constrain_origin_toOtherView() {
         let commonAncestor = UIView()
         let child = UIView()
         commonAncestor.tag = 123
@@ -110,7 +110,7 @@ class ConstraintTests: XCTestCase {
         XCTAssertEqual(commonAncestor.secondAttribute(constraint: .top), .top)
     }
     
-    func test_constraint_width_value() {
+    func test_constrain_width_value() {
         let view = UIView()
         
         view.constrain().width(10)
@@ -118,7 +118,7 @@ class ConstraintTests: XCTestCase {
         XCTAssertEqual(view.widthConstraint()?.constant, 10)
     }
     
-    func test_constraint_width_toOtherview() {
+    func test_constrain_width_toOtherview() {
         let commonAncestor = UIView()
         let child = UIView()
         commonAncestor.tag = 124
@@ -133,7 +133,7 @@ class ConstraintTests: XCTestCase {
         XCTAssertEqual(commonAncestor.secondAttribute(constraint: .width), .width)
     }
     
-    func test_constraint_width_minMax() {
+    func test_constrain_width_minMax() {
         let view = UIView()
         
         view.constrain().width(min: 10, max: 100)
@@ -148,7 +148,7 @@ class ConstraintTests: XCTestCase {
         XCTAssertEqual(maxConstraint.constant, 100)
     }
     
-    func test_constraint_height_value() {
+    func test_constrain_height_value() {
         let view = UIView()
         
         view.constrain().height(10)
@@ -156,7 +156,7 @@ class ConstraintTests: XCTestCase {
         XCTAssertEqual(view.heightConstraint()?.constant, 10)
     }
     
-    func test_constraint_height_toOtherview() {
+    func test_constrain_height_toOtherview() {
         let commonAncestor = UIView()
         let child = UIView()
         commonAncestor.tag = 124
@@ -171,7 +171,7 @@ class ConstraintTests: XCTestCase {
         XCTAssertEqual(commonAncestor.secondAttribute(constraint: .height), .height)
     }
     
-    func test_constraint_height_minMax() {
+    func test_constrain_height_minMax() {
         let view = UIView()
         
         view.constrain().height(min: 10, max: 100)
@@ -184,6 +184,42 @@ class ConstraintTests: XCTestCase {
         XCTAssertEqual(minConstraint.constant, 10)
         XCTAssertEqual(maxConstraint.relation, .lessThanOrEqual)
         XCTAssertEqual(maxConstraint.constant, 100)
+    }
+    
+    func test_constrain_leadingToTrailing() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 123
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().leadingToTrailing(of: commonAncestor)
+        
+        XCTAssertEqual(commonAncestor.constraints.count, 1)
+        XCTAssertTrue(commonAncestor.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .leading,
+                       relation: .equal,
+                       secondItem: commonAncestor.tag,
+                       secondAttribute: .trailing))
+    }
+    
+    func test_constrain_leading() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 124
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().leading(to: commonAncestor)
+        
+        XCTAssertEqual(commonAncestor.constraints.count, 1)
+        XCTAssertTrue(commonAncestor.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .leading,
+                       relation: .equal,
+                       secondItem: commonAncestor.tag,
+                       secondAttribute: .leading))
     }
     
 }
