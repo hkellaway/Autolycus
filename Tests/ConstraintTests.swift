@@ -14,27 +14,51 @@ class ConstraintTests: XCTestCase {
     func test_constrain_toCenter() {
         let commonAncestor = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         let child = UIView()
+        commonAncestor.tag = 123
+        child.tag = 456
         
         commonAncestor.addSubview(child)
         child.constrain().inCenter(of: commonAncestor)
         
-        XCTAssertEqual(commonAncestor.constraints.count, 2)
-        XCTAssertNotNil(commonAncestor.centerXConstraint())
-        XCTAssertNotNil(commonAncestor.centerYConstraint())
+        XCTAssertEqual(commonAncestor.firstItem(constraint: .centerX)?.tag, child.tag)
+        XCTAssertEqual(commonAncestor.firstAttribute(constraint: .centerX), .centerX)
+        XCTAssertEqual(commonAncestor.secondItem(constraint: .centerX)?.tag, commonAncestor.tag)
+        XCTAssertEqual(commonAncestor.secondAttribute(constraint: .centerX), .centerX)
+        
+        XCTAssertEqual(commonAncestor.firstItem(constraint: .centerY)?.tag, child.tag)
+        XCTAssertEqual(commonAncestor.firstAttribute(constraint: .centerY), .centerY)
+        XCTAssertEqual(commonAncestor.secondItem(constraint: .centerY)?.tag, commonAncestor.tag)
+        XCTAssertEqual(commonAncestor.secondAttribute(constraint: .centerY), .centerY)
     }
     
     func test_constrain_edges() {
         let commonAncestor = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         let child = UIView()
+        commonAncestor.tag = 124
+        child.tag = 456
         
         commonAncestor.addSubview(child)
         child.constrain().edges(to: commonAncestor)
         
-        XCTAssertEqual(commonAncestor.constraints.count, 4)
-        XCTAssertNotNil(commonAncestor.leadingConstraint())
-        XCTAssertNotNil(commonAncestor.trailingConstraint())
-        XCTAssertNotNil(commonAncestor.topConstraint())
-        XCTAssertNotNil(commonAncestor.bottomConstraint())
+        XCTAssertEqual(commonAncestor.firstItem(constraint: .leading)?.tag, child.tag)
+        XCTAssertEqual(commonAncestor.firstAttribute(constraint: .leading), .leading)
+        XCTAssertEqual(commonAncestor.secondItem(constraint: .leading)?.tag, commonAncestor.tag)
+        XCTAssertEqual(commonAncestor.secondAttribute(constraint: .leading), .leading)
+        
+        XCTAssertEqual(commonAncestor.firstItem(constraint: .trailing)?.tag, child.tag)
+        XCTAssertEqual(commonAncestor.firstAttribute(constraint: .trailing), .trailing)
+        XCTAssertEqual(commonAncestor.secondItem(constraint: .trailing)?.tag, commonAncestor.tag)
+        XCTAssertEqual(commonAncestor.secondAttribute(constraint: .trailing), .trailing)
+        
+        XCTAssertEqual(commonAncestor.firstItem(constraint: .top)?.tag, child.tag)
+        XCTAssertEqual(commonAncestor.firstAttribute(constraint: .top), .top)
+        XCTAssertEqual(commonAncestor.secondItem(constraint: .top)?.tag, commonAncestor.tag)
+        XCTAssertEqual(commonAncestor.secondAttribute(constraint: .top), .top)
+        
+        XCTAssertEqual(commonAncestor.firstItem(constraint: .bottom)?.tag, child.tag)
+        XCTAssertEqual(commonAncestor.firstAttribute(constraint: .bottom), .bottom)
+        XCTAssertEqual(commonAncestor.secondItem(constraint: .bottom)?.tag, commonAncestor.tag)
+        XCTAssertEqual(commonAncestor.secondAttribute(constraint: .bottom), .bottom)
     }
     
     func test_constrain_size_value() {
@@ -55,11 +79,15 @@ class ConstraintTests: XCTestCase {
         commonAncestor.addSubview(child)
         child.constrain().size(of: commonAncestor)
         
-        XCTAssertEqual((commonAncestor.widthConstraint()?.firstItem as? UIView)?.tag, child.tag)
-        XCTAssertEqual(commonAncestor.widthConstraint()?.firstAttribute, .width)
+        XCTAssertEqual(commonAncestor.firstItem(constraint: .width)?.tag, child.tag)
+        XCTAssertEqual(commonAncestor.firstAttribute(constraint: .width), .width)
+        XCTAssertEqual(commonAncestor.secondItem(constraint: .width)?.tag, commonAncestor.tag)
+        XCTAssertEqual(commonAncestor.secondAttribute(constraint: .width), .width)
         
-        XCTAssertEqual((commonAncestor.heightConstraint()?.secondItem as? UIView)?.tag, commonAncestor.tag)
-        XCTAssertEqual(commonAncestor.heightConstraint()?.secondAttribute, .height)
+        XCTAssertEqual(commonAncestor.firstItem(constraint: .height)?.tag, child.tag)
+        XCTAssertEqual(commonAncestor.firstAttribute(constraint: .height), .height)
+        XCTAssertEqual(commonAncestor.secondItem(constraint: .height)?.tag, commonAncestor.tag)
+        XCTAssertEqual(commonAncestor.secondAttribute(constraint: .height), .height)
     }
     
 }
