@@ -11,6 +11,26 @@ import XCTest
 
 class LoggerTests: XCTestCase {
     
+    func testLogger_logsMessage_whenCannotConstrain_centerX() {
+        let view1 = UIView()
+        let view2 = UIView()
+        let logger = FakeLogger()
+        
+        view1.centerX(to: view2, logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
+    }
+    
+    func testLogger_logsMessage_whenCannotConstrain_centerY() {
+        let view1 = UIView()
+        let view2 = UIView()
+        let logger = FakeLogger()
+        
+        view1.centerY(to: view2, logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
+    }
+    
     func testLogger_logsMessage_whenCannotConstrain_inCenter() {
         let view1 = UIView()
         let view2 = UIView()

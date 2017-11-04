@@ -11,6 +11,42 @@ import XCTest
 
 class ConstraintTests: XCTestCase {
     
+    func test_constrain_centerX() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 124
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().centerX(to: commonAncestor)
+        
+        XCTAssertEqual(commonAncestor.constraints.count, 1)
+        XCTAssertTrue(commonAncestor.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .centerX,
+                       relation: .equal,
+                       secondItem: commonAncestor.tag,
+                       secondAttribute: .centerX))
+    }
+    
+    func test_constrain_centerY() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 124
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().centerY(to: commonAncestor)
+        
+        XCTAssertEqual(commonAncestor.constraints.count, 1)
+        XCTAssertTrue(commonAncestor.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .centerY,
+                       relation: .equal,
+                       secondItem: commonAncestor.tag,
+                       secondAttribute: .centerY))
+    }
+    
     func test_constrain_toCenter() {
         let commonAncestor = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         let child = UIView()

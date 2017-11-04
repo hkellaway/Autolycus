@@ -47,6 +47,58 @@ public extension UIView {
     
     // MARK: - Constraints
     
+    /// Constraints for setting centerX of view to anchor of another.
+    /// If no anchor is provided, defaults to centerX.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func centerX(to view: UIView,
+                        _ anchor: NSLayoutXAxisAnchor? = nil,
+                        offset: CGFloat = 0,
+                        priority: UILayoutPriority = .required,
+                        isActive: Bool = true,
+                        logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return centerXAnchor.constraint(equalTo: anchor ?? view.centerXAnchor, constant: offset).priority(priority).activate(isActive)
+    }
+    
+    /// Constraints for setting centerY of view to anchor of another.
+    /// If no anchor is provided, defaults to centerY.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func centerY(to view: UIView,
+                        _ anchor: NSLayoutYAxisAnchor? = nil,
+                        offset: CGFloat = 0,
+                        priority: UILayoutPriority = .required,
+                        isActive: Bool = true,
+                        logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return centerYAnchor.constraint(equalTo: anchor ?? view.centerYAnchor, constant: offset).priority(priority).activate(isActive)
+    }
+    
     /// Constraints for centering view in another.
     ///
     /// - Parameters:
@@ -717,7 +769,7 @@ public extension UIView {
         return bottom(to: view, view.topAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
     }
     
-    /// Constraints for setting bototm of view to anchor of another.
+    /// Constraints for setting bottom of view to anchor of another.
     /// If no anchor is provided, defaults to bottom.
     ///
     /// - Parameters:
