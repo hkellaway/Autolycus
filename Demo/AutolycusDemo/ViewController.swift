@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        let myView = UIView()
         myView.backgroundColor = .magenta
         
         view.addSubview(myView)

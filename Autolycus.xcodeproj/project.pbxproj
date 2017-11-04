@@ -16,6 +16,7 @@
 		DC6E040C1FAD61BB0040BDBC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E040B1FAD61BB0040BDBC /* Logger.swift */; };
 		DC6E040E1FAD61F70040BDBC /* AutolycusLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E040D1FAD61F70040BDBC /* AutolycusLogger.swift */; };
 		DC6E04111FAD66B40040BDBC /* FakeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E040F1FAD66AF0040BDBC /* FakeLogger.swift */; };
+		DC6E04141FAD693D0040BDBC /* UIView+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E04121FAD69380040BDBC /* UIView+TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		DC6E040B1FAD61BB0040BDBC /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		DC6E040D1FAD61F70040BDBC /* AutolycusLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolycusLogger.swift; sourceTree = "<group>"; };
 		DC6E040F1FAD66AF0040BDBC /* FakeLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLogger.swift; sourceTree = "<group>"; };
+		DC6E04121FAD69380040BDBC /* UIView+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TestHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				DC6E04031FAD38D90040BDBC /* AutolycusTests.swift */,
 				DC6E040F1FAD66AF0040BDBC /* FakeLogger.swift */,
+				DC6E04121FAD69380040BDBC /* UIView+TestHelpers.swift */,
 				DC6E04041FAD38D90040BDBC /* Info.plist */,
 			);
 			path = Tests;
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC6E04141FAD693D0040BDBC /* UIView+TestHelpers.swift in Sources */,
 				DC6E04111FAD66B40040BDBC /* FakeLogger.swift in Sources */,
 				DC6E04051FAD38E00040BDBC /* AutolycusTests.swift in Sources */,
 			);
