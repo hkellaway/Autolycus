@@ -11,22 +11,37 @@ import XCTest
 
 class AutolycusTests: XCTestCase {
     
-    var sut: Autolycus!
-    
     override func setUp() {
         super.setUp()
         
-        sut = Autolycus()
     }
     
     override func tearDown() {
-        sut = nil
         
         super.tearDown()
     }
     
-    func testExample() {
-        XCTAssertNotNil(sut)
+    func testLogsMessageWhenNotPreparedForAutoLayout() {
+        let view1 = UIView()
+        let view2 = UIView()
+        var logger = FakeLogger()
+        
+        view1.inCenter(of: view2, logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged!, AutolycusLogger.prepareForAutoLayoutMessage)
+        
+        logger = FakeLogger()
+        view1.width(10, logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged!, AutolycusLogger.prepareForAutoLayoutMessage)
+        
+        logger = FakeLogger()
+        view1.height(10, logger: logger)
+        
+        logger = FakeLogger()
+        view1.toSize(10, 10, logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged!, AutolycusLogger.prepareForAutoLayoutMessage)
     }
     
 }
