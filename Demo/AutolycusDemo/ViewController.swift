@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         view.addSubview(myView)
         
         myView.constrain().leadingToTrailing(of: secondView)
-        myView.constrain().topToBottom(of: secondView)
+        myView.constrain().bottomToTop(of: secondView)
         myView.constrain().size(CGSize(width: 50, height: 50))
     }
     
