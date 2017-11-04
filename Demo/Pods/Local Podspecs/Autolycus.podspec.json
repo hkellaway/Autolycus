@@ -1,0 +1,23 @@
+{
+  "name": "Autolycus",
+  "version": "0.0.1",
+  "summary": "Autolayout DSL",
+  "description": "Autolayout DSL.",
+  "homepage": "https://github.com/hkellaway/Autolycus",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Harlan Kellaway": "hello@harlankellaway.com"
+  },
+  "source": {
+    "git": "https://github.com/hkellaway/Autolycus.git",
+    "tag": "0.0.1"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "requires_arc": true,
+  "source_files": "Sources/*.{swift}"
+}
