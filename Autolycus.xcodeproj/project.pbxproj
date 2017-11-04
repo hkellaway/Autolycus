@@ -11,6 +11,8 @@
 		DC6E03DE1FAD349D0040BDBC /* Autolycus.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6E03DC1FAD348E0040BDBC /* Autolycus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC6E03E01FAD35390040BDBC /* Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E03DF1FAD35390040BDBC /* Autolycus.swift */; };
 		DC6E04051FAD38E00040BDBC /* AutolycusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E04031FAD38D90040BDBC /* AutolycusTests.swift */; };
+		DC6E04081FAD57150040BDBC /* NSLayoutConstraint+Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E04071FAD57150040BDBC /* NSLayoutConstraint+Autolycus.swift */; };
+		DC6E040A1FAD59420040BDBC /* UIView+Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E04091FAD59420040BDBC /* UIView+Autolycus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		DC6E03DF1FAD35390040BDBC /* Autolycus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autolycus.swift; sourceTree = "<group>"; };
 		DC6E04031FAD38D90040BDBC /* AutolycusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolycusTests.swift; sourceTree = "<group>"; };
 		DC6E04041FAD38D90040BDBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC6E04071FAD57150040BDBC /* NSLayoutConstraint+Autolycus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Autolycus.swift"; sourceTree = "<group>"; };
+		DC6E04091FAD59420040BDBC /* UIView+Autolycus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Autolycus.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				DC6E03DF1FAD35390040BDBC /* Autolycus.swift */,
+				DC6E04071FAD57150040BDBC /* NSLayoutConstraint+Autolycus.swift */,
+				DC6E04091FAD59420040BDBC /* UIView+Autolycus.swift */,
 				DC6E03DC1FAD348E0040BDBC /* Autolycus.h */,
 				DC6E03DD1FAD348E0040BDBC /* Info.plist */,
 			);
@@ -201,6 +207,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC6E03E01FAD35390040BDBC /* Autolycus.swift in Sources */,
+				DC6E04081FAD57150040BDBC /* NSLayoutConstraint+Autolycus.swift in Sources */,
+				DC6E040A1FAD59420040BDBC /* UIView+Autolycus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
