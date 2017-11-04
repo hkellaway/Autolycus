@@ -196,4 +196,24 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
     }
     
+    func testLogger_logsMessage_whenCannotConstraint_topToBottom() {
+        let view1 = UIView()
+        let view2 = UIView()
+        let logger = FakeLogger()
+        
+        view1.topToBottom(of: view2, logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
+    }
+    
+    func testLogger_logsMessage_whenCannotConstrain_top() {
+        let view1 = UIView()
+        let view2 = UIView()
+        let logger = FakeLogger()
+        
+        view1.top(to: view2, logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
+    }
+    
 }

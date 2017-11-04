@@ -330,4 +330,40 @@ class ConstraintTests: XCTestCase {
                        secondAttribute: .right))
     }
     
+    func test_constrain_topToBottom() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 123
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().topToBottom(of: commonAncestor)
+        
+        XCTAssertEqual(commonAncestor.constraints.count, 1)
+        XCTAssertTrue(commonAncestor.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .top,
+                       relation: .equal,
+                       secondItem: commonAncestor.tag,
+                       secondAttribute: .bottom))
+    }
+    
+    func test_constrain_top() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 124
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().top(to: commonAncestor)
+        
+        XCTAssertEqual(commonAncestor.constraints.count, 1)
+        XCTAssertTrue(commonAncestor.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .top,
+                       relation: .equal,
+                       secondItem: commonAncestor.tag,
+                       secondAttribute: .top))
+    }
+    
 }

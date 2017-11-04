@@ -10,22 +10,32 @@ import Autolycus
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let myView = UIView()
+    let secondView = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myView = UIView()
         myView.backgroundColor = .magenta
-        let secondView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        secondView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         secondView.backgroundColor = .blue
         secondView.center = view.center
         
         view.addSubview(secondView)
         view.addSubview(myView)
-        myView.constrain().rightToLeft(of: secondView)
-        myView.constrain().size(CGSize(width: 50, height: 50))
         
-        myView.topAnchor.constraint(equalTo: secondView.bottomAnchor).isActive = true
+        myView.constrain().leadingToTrailing(of: secondView)
+        myView.constrain().topToBottom(of: secondView)
+        myView.constrain().size(CGSize(width: 50, height: 50))
+    }
+    
+    private func manual() {
+        myView.constrain()
+        let constraints = [myView.leadingToTrailing(of: secondView)]
+            + [myView.topToBottom(of: secondView)]
+            + myView.size(CGSize(width: 50, height: 50))
+        NSLayoutConstraint.activate(constraints)
     }
 
 }

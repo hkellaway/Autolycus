@@ -633,6 +633,65 @@ public extension UIView {
         }
     }
     
+    /// Constraints for setting top of view to bottom of another.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func topToBottom(of view: UIView,
+                            offset: CGFloat = 0,
+                            relation: NSLayoutRelation = .equal,
+                            priority: UILayoutPriority = .required,
+                            isActive: Bool = true,
+                            logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return top(to: view, view.bottomAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
+    }
+    
+    /// Constraints for setting top of view to anchor of another.
+    /// If no anchor is provided, defaults to top.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func top(to view: UIView,
+                      _ anchor: NSLayoutYAxisAnchor? = nil,
+                      offset: CGFloat = 0,
+                      relation: NSLayoutRelation = .equal,
+                      priority: UILayoutPriority = .required,
+                      isActive: Bool = true,
+                      logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return NSLayoutConstraint()
+        }
+        
+        switch relation {
+        case .equal:
+            return topAnchor.constraint(equalTo: anchor ?? view.topAnchor, constant: offset).priority(priority).activate(isActive)
+        case .lessThanOrEqual:
+            return topAnchor.constraint(lessThanOrEqualTo: anchor ?? view.topAnchor, constant: offset).priority(priority).activate(isActive)
+        case .greaterThanOrEqual:
+            return topAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.topAnchor, constant: offset).priority(priority).activate(isActive)
+        }
+    }
+    
     // MARK: - Convenience
     
     /// Constrains the view to the provided width and returns same instance.
