@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         
         view.addSubview(secondView)
         view.addSubview(myView)
-        myView.constrain().leadingToTrailing(of: secondView)
+        myView.constrain().leftToRight(of: secondView)
         myView.constrain().size(CGSize(width: 50, height: 50))
         
         myView.topAnchor.constraint(equalTo: secondView.bottomAnchor).isActive = true

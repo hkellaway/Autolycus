@@ -136,4 +136,25 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
     }
     
+    func testLogger_logsMessage_whenCannotConstraint_leftToRight() {
+        let view1 = UIView()
+        let view2 = UIView()
+        let logger = FakeLogger()
+        
+        view1.leftToRight(of: view2, logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
+    }
+
+    func testLogger_logsMessage_whenCannotConstrain_left() {
+        let view1 = UIView()
+        let view2 = UIView()
+        let logger = FakeLogger()
+        
+        view1.left(to: view2, logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
+    }
+
+    
 }
