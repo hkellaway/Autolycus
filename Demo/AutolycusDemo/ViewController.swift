@@ -23,10 +23,10 @@ class ViewController: UIViewController {
         secondView.center = view.center
         
         view.addSubview(secondView)
-        view.addSubview(myView)
+        secondView.addSubview(myView)
         
-        myView.constrain().centerX(to: secondView, offset: 40)
-        myView.constrain().centerY(to: secondView)
+        myView.constrain().centerXToSuperview()
+        myView.constrain().centerYToSuperview()
         myView.constrain().size(CGSize(width: 50, height: 50))
     }
     

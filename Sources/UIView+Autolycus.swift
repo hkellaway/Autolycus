@@ -803,6 +803,58 @@ public extension UIView {
         }
     }
     
+    // MARK: Superview
+    
+    /// Constraints for setting centerX of view to anchor of superview.
+    /// If no anchor is provided, defaults to centerX.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func centerXToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
+                                   offset: CGFloat = 0,
+                                   priority: UILayoutPriority = .required,
+                                   isActive: Bool = true,
+                                   logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return centerX(to: superview, anchor, offset: offset, priority: priority, isActive: isActive)
+    }
+    
+    /// Constraints for setting centerY of view to anchor of superview.
+    /// If no anchor is provided, defaults to centerY.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func centerYToSuperview(_ anchor: NSLayoutYAxisAnchor? = nil,
+                                   offset: CGFloat = 0,
+                                   priority: UILayoutPriority = .required,
+                                   isActive: Bool = true,
+                                   logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return centerY(to: superview, anchor, offset: offset, priority: priority, isActive: isActive)
+    }
+    
     // MARK: - Convenience
     
     /// Constrains the view to the provided width and returns same instance.

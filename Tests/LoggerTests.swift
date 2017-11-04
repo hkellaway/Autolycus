@@ -256,4 +256,24 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
     }
     
+    // MARK: Superview
+    
+    func testLogger_logsMessage_whenMissingSuperview_centerXToSuperview() {
+        let view = UIView()
+        let logger = FakeLogger()
+        
+        view.centerXToSuperview(logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.nilSuperviewMessage)
+    }
+    
+    func testLogger_logsMessage_whenMissingSuperview_centerYToSuperview() {
+        let view = UIView()
+        let logger = FakeLogger()
+        
+        view.centerYToSuperview(logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.nilSuperviewMessage)
+    }
+    
 }

@@ -438,4 +438,42 @@ class ConstraintTests: XCTestCase {
                        secondAttribute: .bottom))
     }
     
+    // MARK: Superview
+    
+    func test_constrain_centerXToSuperview() {
+        let superview = UIView()
+        let child = UIView()
+        superview.tag = 124
+        child.tag = 456
+        
+        superview.addSubview(child)
+        child.constrain().centerXToSuperview()
+        
+        XCTAssertEqual(superview.constraints.count, 1)
+        XCTAssertTrue(superview.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .centerX,
+                       relation: .equal,
+                       secondItem: superview.tag,
+                       secondAttribute: .centerX))
+    }
+    
+    func test_constrain_centerYToSuperview() {
+        let superview = UIView()
+        let child = UIView()
+        superview.tag = 124
+        child.tag = 456
+        
+        superview.addSubview(child)
+        child.constrain().centerYToSuperview()
+        
+        XCTAssertEqual(superview.constraints.count, 1)
+        XCTAssertTrue(superview.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .centerY,
+                       relation: .equal,
+                       secondItem: superview.tag,
+                       secondAttribute: .centerY))
+    }
+    
 }
