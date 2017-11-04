@@ -40,6 +40,35 @@ extension UIView {
         return heightConstraints().first
     }
     
+    func leadingConstraint() -> NSLayoutConstraint? {
+        guard leadingConstraints().count == 1 else {
+            return nil
+        }
+        return leadingConstraints().first
+    }
+    
+    func trailingConstraint() -> NSLayoutConstraint? {
+        guard trailingConstraints().count == 1 else {
+            return nil
+        }
+        return trailingConstraints().first
+    }
+    
+    func topConstraint() -> NSLayoutConstraint? {
+        guard topConstraints().count == 1 else {
+            return nil
+        }
+        return topConstraints().first
+    }
+    
+    func bottomConstraint() -> NSLayoutConstraint? {
+        guard bottomConstraints().count == 1 else {
+            return nil
+        }
+        
+        return bottomConstraints().first
+    }
+    
     func widthConstraints() -> [NSLayoutConstraint] {
         return constraints.filter { $0.firstAttribute == .width }
     }
@@ -54,6 +83,22 @@ extension UIView {
     
     func centerYConstraints() -> [NSLayoutConstraint] {
         return constraints.filter { $0.firstAttribute == .centerY }
+    }
+    
+    func leadingConstraints() -> [NSLayoutConstraint] {
+        return constraints.filter { $0.firstAttribute == .leading }
+    }
+    
+    func trailingConstraints() -> [NSLayoutConstraint] {
+        return constraints.filter { $0.firstAttribute == .trailing }
+    }
+    
+    func topConstraints() -> [NSLayoutConstraint] {
+        return constraints.filter { $0.firstAttribute == .top }
+    }
+    
+    func bottomConstraints() -> [NSLayoutConstraint] {
+        return constraints.filter { $0.firstAttribute == .bottom }
     }
     
 }

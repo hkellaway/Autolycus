@@ -47,6 +47,63 @@ public extension UIView {
     
     // MARK: - Constraints
     
+    /// Constraints for centering view in another.
+    ///
+    /// - Parameters:
+    ///   - view: View to center in.
+    ///   - offset: Point offset from center. Defaults to zero.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func inCenter(of view: UIView,
+                         offset: CGPoint = .zero,
+                         priority: UILayoutPriority = .required,
+                         isActive: Bool = true,
+                         logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return []
+        }
+        
+        let constraints = [
+            centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: offset.x).priority(priority),
+            centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: offset.y).priority(priority)
+        ]
+        
+        if isActive {
+            NSLayoutConstraint.activate(constraints)
+        }
+        
+        return constraints
+    }
+    
+    @discardableResult
+    public func edges(to view: UIView,
+                      insets: UIEdgeInsets = .zero,
+                      priority: UILayoutPriority = .required,
+                      isActive: Bool = true,
+                      logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return []
+        }
+        
+        let constraints = [
+            topAnchor.constraint(equalTo: view.topAnchor, constant: insets.top).priority(priority),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: insets.left).priority(priority),
+            bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: insets.bottom).priority(priority),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: insets.right).priority(priority)
+        ]
+        
+        if isActive {
+            NSLayoutConstraint.activate(constraints)
+        }
+        
+        return constraints
+    }
+    
     /// Constraint for setting width of view.
     ///
     /// - Parameters:
@@ -87,38 +144,6 @@ public extension UIView {
         }
         
         return heightAnchor.constraint(equalToConstant: height).priority(priority).activate(isActive)
-    }
-    
-    /// Constraints for centering view in another.
-    ///
-    /// - Parameters:
-    ///   - view: View to center in.
-    ///   - offset: Point offset from center. Defaults to zero.
-    ///   - priority: Priority. Defaults to required.
-    ///   - isActive: Whether the constraint should be active. Defaults to true.
-    ///   - logger: Logger for issues enacting constraints.
-    /// - Returns: Constraints.
-    @discardableResult
-    public func inCenter(of view: UIView,
-                         offset: CGPoint = .zero,
-                         priority: UILayoutPriority = .required,
-                         isActive: Bool = true,
-                         logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
-        guard isPreparedForAutoLayout() else {
-            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
-            return []
-        }
-        
-        let constraints = [
-            centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: offset.x).priority(priority),
-            centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: offset.y).priority(priority)
-        ]
-        
-        if isActive {
-            NSLayoutConstraint.activate(constraints)
-        }
-        
-        return constraints
     }
     
     // MARK: - Convenience

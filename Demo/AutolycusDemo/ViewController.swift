@@ -19,8 +19,7 @@ class ViewController: UIViewController {
         
         view.addSubview(myView)
         myView.constrain()
-            .toSize(200, 200)
-            .inCenter(of: view)
+            .edges(to: view)
     }
 
 }
