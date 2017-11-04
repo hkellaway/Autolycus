@@ -258,4 +258,40 @@ class ConstraintTests: XCTestCase {
                        secondAttribute: .left))
     }
     
+    func test_constrain_trailingToLeading() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 123
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().trailingToLeading(of: commonAncestor)
+        
+        XCTAssertEqual(commonAncestor.constraints.count, 1)
+        XCTAssertTrue(commonAncestor.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .trailing,
+                       relation: .equal,
+                       secondItem: commonAncestor.tag,
+                       secondAttribute: .leading))
+    }
+    
+    func test_constrain_trailing() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 124
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().trailing(to: commonAncestor)
+        
+        XCTAssertEqual(commonAncestor.constraints.count, 1)
+        XCTAssertTrue(commonAncestor.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .trailing,
+                       relation: .equal,
+                       secondItem: commonAncestor.tag,
+                       secondAttribute: .trailing))
+    }
+    
 }
