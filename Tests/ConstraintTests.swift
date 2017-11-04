@@ -476,4 +476,94 @@ class ConstraintTests: XCTestCase {
                        secondAttribute: .centerY))
     }
     
+    func test_constrain_leadingToSuperview() {
+        let superview = UIView()
+        let child = UIView()
+        superview.tag = 124
+        child.tag = 456
+        
+        superview.addSubview(child)
+        child.constrain().leadingToSuperview()
+        
+        XCTAssertEqual(superview.constraints.count, 1)
+        XCTAssertTrue(superview.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .leading,
+                       relation: .equal,
+                       secondItem: superview.tag,
+                       secondAttribute: .leading))
+    }
+    
+    func test_constrain_leftToSuperview() {
+        let superview = UIView()
+        let child = UIView()
+        superview.tag = 124
+        child.tag = 456
+        
+        superview.addSubview(child)
+        child.constrain().leftToSuperview()
+        
+        XCTAssertEqual(superview.constraints.count, 1)
+        XCTAssertTrue(superview.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .left,
+                       relation: .equal,
+                       secondItem: superview.tag,
+                       secondAttribute: .left))
+    }
+    
+    func test_constrain_trailingToSuperview() {
+        let superview = UIView()
+        let child = UIView()
+        superview.tag = 124
+        child.tag = 456
+        
+        superview.addSubview(child)
+        child.constrain().trailingToSuperview()
+        
+        XCTAssertEqual(superview.constraints.count, 1)
+        XCTAssertTrue(superview.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .trailing,
+                       relation: .equal,
+                       secondItem: superview.tag,
+                       secondAttribute: .trailing))
+    }
+    
+    func test_constrain_rightToSuperview() {
+        let superview = UIView()
+        let child = UIView()
+        superview.tag = 124
+        child.tag = 456
+        
+        superview.addSubview(child)
+        child.constrain().rightToSuperview()
+        
+        XCTAssertEqual(superview.constraints.count, 1)
+        XCTAssertTrue(superview.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .right,
+                       relation: .equal,
+                       secondItem: superview.tag,
+                       secondAttribute: .right))
+    }
+    
+    func test_constrain_topToSuperview() {
+        let superview = UIView()
+        let child = UIView()
+        superview.tag = 124
+        child.tag = 456
+        
+        superview.addSubview(child)
+        child.constrain().topToSuperview()
+        
+        XCTAssertEqual(superview.constraints.count, 1)
+        XCTAssertTrue(superview.constraints[0]
+            .hasValues(firstItem: child.tag,
+                       firstAttribute: .top,
+                       relation: .equal,
+                       secondItem: superview.tag,
+                       secondAttribute: .top))
+    }
+    
 }

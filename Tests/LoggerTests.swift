@@ -276,4 +276,49 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.nilSuperviewMessage)
     }
     
+    func testLogger_logsMessage_whenMissingSuperview_leadingToSuperview() {
+        let view = UIView()
+        let logger = FakeLogger()
+        
+        view.leadingToSuperview(logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.nilSuperviewMessage)
+    }
+    
+    func testLogger_logsMessage_whenMissingSuperview_leftToSuperview() {
+        let view = UIView()
+        let logger = FakeLogger()
+        
+        view.leftToSuperview(logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.nilSuperviewMessage)
+    }
+    
+    func testLogger_logsMessage_whenMissingSuperview_trailingToSuperview() {
+        let view = UIView()
+        let logger = FakeLogger()
+        
+        view.trailingToSuperview(logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.nilSuperviewMessage)
+    }
+    
+    func testLogger_logsMessage_whenMissingSuperview_rightToSuperview() {
+        let view = UIView()
+        let logger = FakeLogger()
+        
+        view.rightToSuperview(logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.nilSuperviewMessage)
+    }
+    
+    func testLogger_logsMessage_whenMissingSuperview_topToSuperview() {
+        let view = UIView()
+        let logger = FakeLogger()
+        
+        view.topToSuperview(logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.nilSuperviewMessage)
+    }
+    
 }

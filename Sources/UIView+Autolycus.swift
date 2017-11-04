@@ -60,7 +60,7 @@ public extension UIView {
     /// - Returns: Constraints.
     @discardableResult
     public func centerX(to view: UIView,
-                        _ anchor: NSLayoutXAxisAnchor? = nil,
+                        anchor: NSLayoutXAxisAnchor? = nil,
                         offset: CGFloat = 0,
                         priority: UILayoutPriority = .required,
                         isActive: Bool = true,
@@ -86,7 +86,7 @@ public extension UIView {
     /// - Returns: Constraints.
     @discardableResult
     public func centerY(to view: UIView,
-                        _ anchor: NSLayoutYAxisAnchor? = nil,
+                        anchor: NSLayoutYAxisAnchor? = nil,
                         offset: CGFloat = 0,
                         priority: UILayoutPriority = .required,
                         isActive: Bool = true,
@@ -471,7 +471,7 @@ public extension UIView {
             return NSLayoutConstraint()
         }
         
-        return leading(to: view, view.trailingAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
+        return leading(to: view, anchor: view.trailingAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
     }
     
     /// Constraints for setting leading of view to anchor of another.
@@ -487,7 +487,7 @@ public extension UIView {
     /// - Returns: Constraints.
     @discardableResult
     public func leading(to view: UIView,
-                        _ anchor: NSLayoutXAxisAnchor? = nil,
+                        anchor: NSLayoutXAxisAnchor? = nil,
                         offset: CGFloat = 0,
                         relation: NSLayoutRelation = .equal,
                         priority: UILayoutPriority = .required,
@@ -530,7 +530,7 @@ public extension UIView {
             return NSLayoutConstraint()
         }
         
-        return left(to: view, view.rightAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
+        return left(to: view, anchor: view.rightAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
     }
     
     /// Constraints for setting left of view to anchor of another.
@@ -546,7 +546,7 @@ public extension UIView {
     /// - Returns: Constraints.
     @discardableResult
     public func left(to view: UIView,
-                        _ anchor: NSLayoutXAxisAnchor? = nil,
+                        anchor: NSLayoutXAxisAnchor? = nil,
                         offset: CGFloat = 0,
                         relation: NSLayoutRelation = .equal,
                         priority: UILayoutPriority = .required,
@@ -589,7 +589,7 @@ public extension UIView {
             return NSLayoutConstraint()
         }
         
-        return trailing(to: view, view.leadingAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
+        return trailing(to: view, anchor: view.leadingAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
     }
     
     /// Constraints for setting trailing of view to anchor of another.
@@ -605,7 +605,7 @@ public extension UIView {
     /// - Returns: Constraints.
     @discardableResult
     public func trailing(to view: UIView,
-                         _ anchor: NSLayoutXAxisAnchor? = nil,
+                         anchor: NSLayoutXAxisAnchor? = nil,
                          offset: CGFloat = 0,
                          relation: NSLayoutRelation = .equal,
                          priority: UILayoutPriority = .required,
@@ -648,7 +648,7 @@ public extension UIView {
             return NSLayoutConstraint()
         }
         
-        return right(to: view, view.leftAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
+        return right(to: view, anchor: view.leftAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
     }
     
     /// Constraints for setting right of view to anchor of another.
@@ -664,7 +664,7 @@ public extension UIView {
     /// - Returns: Constraints.
     @discardableResult
     public func right(to view: UIView,
-                      _ anchor: NSLayoutXAxisAnchor? = nil,
+                      anchor: NSLayoutXAxisAnchor? = nil,
                       offset: CGFloat = 0,
                       relation: NSLayoutRelation = .equal,
                       priority: UILayoutPriority = .required,
@@ -707,7 +707,7 @@ public extension UIView {
             return NSLayoutConstraint()
         }
         
-        return top(to: view, view.bottomAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
+        return top(to: view, anchor: view.bottomAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
     }
     
     /// Constraints for setting top of view to anchor of another.
@@ -723,7 +723,7 @@ public extension UIView {
     /// - Returns: Constraints.
     @discardableResult
     public func top(to view: UIView,
-                      _ anchor: NSLayoutYAxisAnchor? = nil,
+                      anchor: NSLayoutYAxisAnchor? = nil,
                       offset: CGFloat = 0,
                       relation: NSLayoutRelation = .equal,
                       priority: UILayoutPriority = .required,
@@ -766,7 +766,7 @@ public extension UIView {
             return NSLayoutConstraint()
         }
         
-        return bottom(to: view, view.topAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
+        return bottom(to: view, anchor: view.topAnchor, offset: offset, relation: relation, priority: priority, isActive: isActive, logger: logger)
     }
     
     /// Constraints for setting bottom of view to anchor of another.
@@ -782,7 +782,7 @@ public extension UIView {
     /// - Returns: Constraints.
     @discardableResult
     public func bottom(to view: UIView,
-                       _ anchor: NSLayoutYAxisAnchor? = nil,
+                       anchor: NSLayoutYAxisAnchor? = nil,
                        offset: CGFloat = 0,
                        relation: NSLayoutRelation = .equal,
                        priority: UILayoutPriority = .required,
@@ -827,7 +827,7 @@ public extension UIView {
             return NSLayoutConstraint()
         }
         
-        return centerX(to: superview, anchor, offset: offset, priority: priority, isActive: isActive)
+        return centerX(to: superview, anchor: anchor, offset: offset, priority: priority, isActive: isActive, logger: logger)
     }
     
     /// Constraints for setting centerY of view to anchor of superview.
@@ -852,7 +852,157 @@ public extension UIView {
             return NSLayoutConstraint()
         }
         
-        return centerY(to: superview, anchor, offset: offset, priority: priority, isActive: isActive)
+        return centerY(to: superview, anchor: anchor, offset: offset, priority: priority, isActive: isActive, logger: logger)
+    }
+    
+    /// Constraints for setting leading of view to anchor of superview.
+    /// If no anchor is provided, defaults to leading.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func leadingToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
+                                   offset: CGFloat = 0,
+                                   priority: UILayoutPriority = .required,
+                                   isActive: Bool = true,
+                                   logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return leading(to: superview, anchor: anchor, offset: offset, priority: priority, isActive: isActive, logger: logger)
+    }
+    
+    /// Constraints for setting left of view to anchor of superview.
+    /// If no anchor is provided, defaults to left.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func leftToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
+                                offset: CGFloat = 0,
+                                priority: UILayoutPriority = .required,
+                                isActive: Bool = true,
+                                logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return left(to: superview, anchor: anchor, offset: offset, priority: priority, isActive: isActive, logger: logger)
+    }
+    
+    /// Constraints for setting trailing of view to anchor of superview.
+    /// If no anchor is provided, defaults to trailing.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func trailingToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
+                                    offset: CGFloat = 0,
+                                    priority: UILayoutPriority = .required,
+                                    isActive: Bool = true,
+                                    logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return trailing(to: superview, anchor: anchor, offset: offset, priority: priority, isActive: isActive, logger: logger)
+    }
+    
+    /// Constraints for setting right of view to anchor of superview.
+    /// If no anchor is provided, defaults to right.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func rightToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
+                                 offset: CGFloat = 0,
+                                 priority: UILayoutPriority = .required,
+                                 isActive: Bool = true,
+                                 logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return right(to: superview, anchor: anchor, offset: offset, priority: priority, isActive: isActive, logger: logger)
+    }
+    
+    /// Constraints for setting top of view to anchor of superview.
+    /// If no anchor is provided, defaults to top.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func topToSuperview(_ anchor: NSLayoutYAxisAnchor? = nil,
+                               offset: CGFloat = 0,
+                               priority: UILayoutPriority = .required,
+                               isActive: Bool = true,
+                               logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return top(to: superview, anchor: anchor, offset: offset, priority: priority, isActive: isActive, logger: logger)
+    }
+    
+    /// Constraints for setting bottom of view to anchor of superview.
+    /// If no anchor is provided, defaults to bottom.
+    ///
+    /// - Parameters:
+    ///   - view: View to constrain to.
+    ///   - offset: Offset. Defaults to zero.
+    ///   - relation: Realtions. Defaults to equal.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func bottomToSuperview(_ anchor: NSLayoutYAxisAnchor? = nil,
+                                  offset: CGFloat = 0,
+                                  priority: UILayoutPriority = .required,
+                                  isActive: Bool = true,
+                                  logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard let superview = superview else {
+            logger.log(AutolycusLogger.nilSuperviewMessage)
+            return NSLayoutConstraint()
+        }
+        
+        return bottom(to: superview, anchor: anchor, offset: offset, priority: priority, isActive: isActive, logger: logger)
     }
     
     // MARK: - Convenience
