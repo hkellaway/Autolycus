@@ -266,6 +266,116 @@ public extension UIView {
         }
     }
     
+    /// Constraint for setting width minimum and/or maximum.
+    ///
+    /// - Parameters:
+    ///   - min: Minimum.
+    ///   - max: Maximum.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func width(min: CGFloat? = nil,
+                      max: CGFloat? = nil,
+                      priority: UILayoutPriority = .required,
+                      isActive: Bool = true,
+                      logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return []
+        }
+        
+        var constraints: [NSLayoutConstraint] = []
+        
+        if let min = min {
+            let constraint = widthAnchor.constraint(greaterThanOrEqualToConstant: min).priority(priority)
+            constraint.isActive = isActive
+            constraints.append(constraint)
+        }
+        
+        if let max = max {
+            let constraint = widthAnchor.constraint(lessThanOrEqualToConstant: max).priority(priority)
+            constraint.isActive = isActive
+            constraints.append(constraint)
+        }
+        
+        return constraints
+    }
+    
+    /// Constraint for setting height of view.
+    ///
+    /// - Parameters:
+    ///   - view. View to base width on.
+    ///   - dimension: Dimension. Defaults to using other view's heightAnchor.
+    ///   - multiplier: Multiplier. Defaults to 1.
+    ///   - offset: Offset. Defaults to 0.
+    ///   - relation: Relation. Defaults to equal.
+    ///   - priority: Priority. Defaults to rquired.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraint.
+    @discardableResult
+    public func height(to view: UIView,
+                       dimension: NSLayoutDimension? = nil,
+                       multiplier: CGFloat = 1,
+                       offset: CGFloat = 0,
+                       relation: NSLayoutRelation = .equal,
+                       priority: UILayoutPriority = .required,
+                       isActive: Bool = true,
+                       logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return NSLayoutConstraint()
+        }
+        
+        switch relation {
+        case .equal:
+            return heightAnchor.constraint(equalTo: dimension ?? view.heightAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
+        case .lessThanOrEqual:
+            return heightAnchor.constraint(lessThanOrEqualTo: dimension ?? view.heightAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
+        case .greaterThanOrEqual:
+            return heightAnchor.constraint(greaterThanOrEqualTo: dimension ?? view.heightAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
+        }
+    }
+    
+    /// Constraint for setting height minimum and/or maximum.
+    ///
+    /// - Parameters:
+    ///   - min: Minimum.
+    ///   - max: Maximum.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger: Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func height(min: CGFloat? = nil,
+                       max: CGFloat? = nil,
+                       priority: UILayoutPriority = .required,
+                       isActive: Bool = true,
+                       logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return []
+        }
+        
+        var constraints: [NSLayoutConstraint] = []
+        
+        if let min = min {
+            let constraint = heightAnchor.constraint(greaterThanOrEqualToConstant: min).priority(priority)
+            constraint.isActive = isActive
+            constraints.append(constraint)
+        }
+        
+        if let max = max {
+            let constraint = heightAnchor.constraint(lessThanOrEqualToConstant: max).priority(priority)
+            constraint.isActive = isActive
+            constraints.append(constraint)
+        }
+        
+        return constraints
+    }
+    
     /// Constrant for setting height of view.
     ///
     /// - Parameters:

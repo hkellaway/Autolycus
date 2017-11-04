@@ -22,10 +22,9 @@ class ViewController: UIViewController {
         
         view.addSubview(secondView)
         view.addSubview(myView)
-        myView.constrain().height(150)
-        myView.constrain().origin(to: secondView)
-        
-        myView.constrain().width(to: secondView, dimension: secondView.heightAnchor)
+        myView.constrain().inCenter(of: secondView)
+        myView.constrain().width(min: 100)
+        myView.constrain().height(min: 50)
     }
 
 }

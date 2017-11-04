@@ -133,12 +133,57 @@ class ConstraintTests: XCTestCase {
         XCTAssertEqual(commonAncestor.secondAttribute(constraint: .width), .width)
     }
     
+    func test_constraint_width_minMax() {
+        let view = UIView()
+        
+        view.constrain().width(min: 10, max: 100)
+        
+        let widthConstraints = view.widthConstraints()
+        let minConstraint = widthConstraints[0]
+        let maxConstraint = widthConstraints[1]
+        
+        XCTAssertEqual(minConstraint.relation, .greaterThanOrEqual)
+        XCTAssertEqual(minConstraint.constant, 10)
+        XCTAssertEqual(maxConstraint.relation, .lessThanOrEqual)
+        XCTAssertEqual(maxConstraint.constant, 100)
+    }
+    
     func test_constraint_height_value() {
         let view = UIView()
         
         view.constrain().height(10)
         
         XCTAssertEqual(view.heightConstraint()?.constant, 10)
+    }
+    
+    func test_constraint_height_toOtherview() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 124
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().height(to: commonAncestor)
+        
+        XCTAssertEqual(commonAncestor.firstItem(constraint: .height)?.tag, child.tag)
+        XCTAssertEqual(commonAncestor.firstAttribute(constraint: .height), .height)
+        XCTAssertEqual(commonAncestor.secondItem(constraint: .height)?.tag, commonAncestor.tag)
+        XCTAssertEqual(commonAncestor.secondAttribute(constraint: .height), .height)
+    }
+    
+    func test_constraint_height_minMax() {
+        let view = UIView()
+        
+        view.constrain().height(min: 10, max: 100)
+        
+        let heightConstraints = view.heightConstraints()
+        let minConstraint = heightConstraints[0]
+        let maxConstraint = heightConstraints[1]
+        
+        XCTAssertEqual(minConstraint.relation, .greaterThanOrEqual)
+        XCTAssertEqual(minConstraint.constant, 10)
+        XCTAssertEqual(maxConstraint.relation, .lessThanOrEqual)
+        XCTAssertEqual(maxConstraint.constant, 100)
     }
     
 }

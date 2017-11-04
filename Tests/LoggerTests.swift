@@ -50,7 +50,7 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
     }
     
-    func testLogger_logMessage_whenCannotConstraint_origin_otherView() {
+    func testLogger_logMessage_whenCannotConstrain_origin_otherView() {
         let view1 = UIView()
         let view2 = UIView()
         let logger = FakeLogger()
@@ -69,7 +69,7 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
     }
     
-    func testLogger_logsMessage_whenCannotConstraint_width_toOtherView() {
+    func testLogger_logsMessage_whenCannotConstrain_width_toOtherView() {
         let view1 = UIView()
         let view2 = UIView()
         let logger = FakeLogger()
@@ -79,11 +79,39 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
     }
     
+    func testLogger_logsMessage_whenCannotConstrain_width_minMax() {
+        let view = UIView()
+        let logger = FakeLogger()
+        
+        view.width(min: 10, max: 100, logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
+    }
+    
     func testLogger_logsMessage_whenCannotConstrain_height_value() {
         let view = UIView()
         let logger = FakeLogger()
         
         view.height(10, logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
+    }
+    
+    func testLogger_logsMessage_whenCannotConstrain_height_toOtherView() {
+        let view1 = UIView()
+        let view2 = UIView()
+        let logger = FakeLogger()
+        
+        view1.height(to: view2, logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
+    }
+    
+    func testLogger_logsMessage_whenCannotConstrain_height_minMax() {
+        let view = UIView()
+        let logger = FakeLogger()
+        
+        view.height(min: 10, max: 100, logger: logger)
         
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
     }
