@@ -16,10 +16,14 @@ class ViewController: UIViewController {
         
         let myView = UIView()
         myView.backgroundColor = .magenta
+        let secondView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+        secondView.backgroundColor = .blue
+        secondView.center = view.center
         
+        view.addSubview(secondView)
         view.addSubview(myView)
-        myView.constrain()
-            .edges(to: view)
+        myView.constrain().size(of: secondView, multiplier: 0.5)
+        myView.constrain().inCenter(of: secondView, offset: CGPoint(x: 100, y: 100))
     }
 
 }

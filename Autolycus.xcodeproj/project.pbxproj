@@ -18,6 +18,7 @@
 		DC6E04111FAD66B40040BDBC /* FakeLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E040F1FAD66AF0040BDBC /* FakeLogger.swift */; };
 		DC6E04141FAD693D0040BDBC /* UIView+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E04121FAD69380040BDBC /* UIView+TestHelpers.swift */; };
 		DC6E04171FADF66F0040BDBC /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E04151FADF64A0040BDBC /* LoggerTests.swift */; };
+		DC6E041A1FADFCDB0040BDBC /* UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6E04181FADFCCB0040BDBC /* UIViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		DC6E040F1FAD66AF0040BDBC /* FakeLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeLogger.swift; sourceTree = "<group>"; };
 		DC6E04121FAD69380040BDBC /* UIView+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+TestHelpers.swift"; sourceTree = "<group>"; };
 		DC6E04151FADF64A0040BDBC /* LoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
+		DC6E04181FADFCCB0040BDBC /* UIViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				DC6E04031FAD38D90040BDBC /* ConstraintTests.swift */,
+				DC6E04181FADFCCB0040BDBC /* UIViewTests.swift */,
 				DC6E04151FADF64A0040BDBC /* LoggerTests.swift */,
 				DC6E040F1FAD66AF0040BDBC /* FakeLogger.swift */,
 				DC6E04121FAD69380040BDBC /* UIView+TestHelpers.swift */,
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC6E041A1FADFCDB0040BDBC /* UIViewTests.swift in Sources */,
 				DC6E04141FAD693D0040BDBC /* UIView+TestHelpers.swift in Sources */,
 				DC6E04111FAD66B40040BDBC /* FakeLogger.swift in Sources */,
 				DC6E04051FAD38E00040BDBC /* ConstraintTests.swift in Sources */,

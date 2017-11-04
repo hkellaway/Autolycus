@@ -11,32 +11,7 @@ import XCTest
 
 class ConstraintTests: XCTestCase {
     
-    func testConstrainWidth() {
-        let view = UIView()
-        
-        view.constrain().toWidth(10)
-        
-        XCTAssertEqual(view.widthConstraint()?.constant, 10)
-    }
-    
-    func testConstraintHeight() {
-        let view = UIView()
-        
-        view.constrain().toHeight(20)
-        
-        XCTAssertEqual(view.heightConstraint()?.constant, 20)
-    }
-    
-    func testConstrainSize() {
-        let view = UIView()
-        
-        view.constrain().toSize(30, 40)
-        
-        XCTAssertEqual(view.widthConstraint()?.constant, 30)
-        XCTAssertEqual(view.heightConstraint()?.constant, 40)
-    }
-    
-    func testConstrainToCenter() {
+    func test_constrain_toCenter() {
         let commonAncestor = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         let child = UIView()
         
@@ -48,20 +23,43 @@ class ConstraintTests: XCTestCase {
         XCTAssertNotNil(commonAncestor.centerYConstraint())
     }
     
-    func testConstrainEdges() {
+    func test_constrain_edges() {
         let commonAncestor = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         let child = UIView()
         
         commonAncestor.addSubview(child)
         child.constrain().edges(to: commonAncestor)
         
-        print(commonAncestor.constraints)
-        
         XCTAssertEqual(commonAncestor.constraints.count, 4)
         XCTAssertNotNil(commonAncestor.leadingConstraint())
         XCTAssertNotNil(commonAncestor.trailingConstraint())
         XCTAssertNotNil(commonAncestor.topConstraint())
         XCTAssertNotNil(commonAncestor.bottomConstraint())
+    }
+    
+    func test_constrain_size_value() {
+        let view = UIView()
+        
+        view.constrain().size(CGSize(width: 20, height: 30))
+        
+        XCTAssertEqual(view.widthConstraint()?.constant, 20)
+        XCTAssertEqual(view.heightConstraint()?.constant, 30)
+    }
+    
+    func test_constrain_size_toOtherView() {
+        let commonAncestor = UIView()
+        let child = UIView()
+        commonAncestor.tag = 123
+        child.tag = 456
+        
+        commonAncestor.addSubview(child)
+        child.constrain().size(of: commonAncestor)
+        
+        XCTAssertEqual((commonAncestor.widthConstraint()?.firstItem as? UIView)?.tag, child.tag)
+        XCTAssertEqual(commonAncestor.widthConstraint()?.firstAttribute, .width)
+        
+        XCTAssertEqual((commonAncestor.heightConstraint()?.secondItem as? UIView)?.tag, commonAncestor.tag)
+        XCTAssertEqual(commonAncestor.heightConstraint()?.secondAttribute, .height)
     }
     
 }

@@ -31,11 +31,30 @@ class LoggerTests: XCTestCase {
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
     }
     
-    func testLogger_logsMessage_whenCannotConstrain_Size() {
+    func testLogger_logMessage_whenCannotConstrain_size_value() {
         let view = UIView()
         let logger = FakeLogger()
         
-        view.toSize(10, 10, logger: logger)
+        view.size(CGSize(width: 10, height: 10), logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
+    }
+    
+    func testLogger_logMessage_whenCannotConstrain_size_otherView() {
+        let view1 = UIView()
+        let view2 = UIView()
+        let logger = FakeLogger()
+        
+        view1.size(of: view2, logger: logger)
+        
+        XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
+    }
+    
+    func testLogger_logsMessage_whenCannotConstrain_view_toSize() {
+        let view = UIView()
+        let logger = FakeLogger()
+        
+        view.toSize(CGSize(width: 10, height: 10), logger: logger)
         
         XCTAssertEqual(logger.lastMessageLogged, AutolycusLogger.prepareForAutoLayoutMessage)
     }

@@ -79,6 +79,15 @@ public extension UIView {
         return constraints
     }
     
+    /// Constraints for pinning edges of one view to another.
+    ///
+    /// - Parameters:
+    ///   - view: View to pin to.
+    ///   - insets: Insets. Defaults to zero.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger:  Logger for issues enacting constraints.
+    /// - Returns: Constraints.
     @discardableResult
     public func edges(to view: UIView,
                       insets: UIEdgeInsets = .zero,
@@ -104,6 +113,70 @@ public extension UIView {
         return constraints
     }
     
+    /// Constraints for setting view size.
+    ///
+    /// - Parameters:
+    ///   - size: Size.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger:  Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func size(_ size: CGSize,
+                     priority: UILayoutPriority = .required,
+                     isActive: Bool = true,
+                     logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return []
+        }
+        
+        let constraints = [
+            widthAnchor.constraint(equalToConstant: size.width).priority(priority),
+            heightAnchor.constraint(equalToConstant: size.height).priority(priority)
+        ]
+        
+        if isActive {
+            NSLayoutConstraint.activate(constraints)
+        }
+        
+        return constraints
+    }
+    
+    /// Constraints for setting size to another view's size.
+    ///
+    /// - Parameters:
+    ///   - view: View to replicate size of.
+    ///   - multiplier: Multiplize. Defaults to 1.
+    ///   - offset: Offset. Defaults to 0.
+    ///   - priority: Priority. Defaults to required.
+    ///   - isActive: Whether the constraint should be active. Defaults to true.
+    ///   - logger:  Logger for issues enacting constraints.
+    /// - Returns: Constraints.
+    @discardableResult
+    public func size(of view: UIView,
+                     multiplier: CGFloat = 1,
+                     offset: CGFloat = 0,
+                     priority: UILayoutPriority = .required,
+                     isActive: Bool = true,
+                     logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
+        guard isPreparedForAutoLayout() else {
+            logger.log(AutolycusLogger.prepareForAutoLayoutMessage)
+            return []
+        }
+        
+        let constraints = [
+            widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: multiplier, constant: offset).priority(priority),
+            heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: multiplier, constant: offset).priority(priority)
+        ]
+        
+        if isActive {
+            NSLayoutConstraint.activate(constraints)
+        }
+        
+        return constraints
+    }
+
     /// Constraint for setting width of view.
     ///
     /// - Parameters:
@@ -177,16 +250,13 @@ public extension UIView {
     /// Constrains the view to provided size and returns same instance.
     ///
     /// - Parameters:
-    ///   - widthValue: Width.
-    ///   - heightValue: Height.
+    ///   - sizeValue: Size.
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: View instance acted upon.
     @discardableResult
-    public func toSize(_ widthValue: CGFloat,
-                       _ heightValue: CGFloat,
+    public func toSize(_ sizeValue: CGSize,
                        logger: Logger = AutolycusLogger.shared) -> Self {
-        toWidth(widthValue, logger: logger)
-        toHeight(heightValue, logger: logger)
+        size(sizeValue, logger: logger)
         return self
     }
     
