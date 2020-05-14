@@ -299,7 +299,7 @@ extension UIView {
                       dimension: NSLayoutDimension? = nil,
                       multiplier: CGFloat = 1,
                       offset: CGFloat = 0,
-                      relation: NSLayoutRelation = .equal,
+                      relation: NSLayoutConstraint.Relation = .equal,
                       priority: UILayoutPriority = .required,
                       isActive: Bool = true,
                       logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -315,6 +315,8 @@ extension UIView {
             return widthAnchor.constraint(lessThanOrEqualTo: dimension ?? view.widthAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return widthAnchor.constraint(greaterThanOrEqualTo: dimension ?? view.widthAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -393,7 +395,7 @@ extension UIView {
                        dimension: NSLayoutDimension? = nil,
                        multiplier: CGFloat = 1,
                        offset: CGFloat = 0,
-                       relation: NSLayoutRelation = .equal,
+                       relation: NSLayoutConstraint.Relation = .equal,
                        priority: UILayoutPriority = .required,
                        isActive: Bool = true,
                        logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -409,6 +411,8 @@ extension UIView {
             return heightAnchor.constraint(lessThanOrEqualTo: dimension ?? view.heightAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return heightAnchor.constraint(greaterThanOrEqualTo: dimension ?? view.heightAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -462,7 +466,7 @@ extension UIView {
     @discardableResult
     func leadingToTrailing(of view: UIView,
                                   offset: CGFloat = 0,
-                                  relation: NSLayoutRelation = .equal,
+                                  relation: NSLayoutConstraint.Relation = .equal,
                                   priority: UILayoutPriority = .required,
                                   isActive: Bool = true,
                                   logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -489,7 +493,7 @@ extension UIView {
     func leading(to view: UIView,
                         anchor: NSLayoutXAxisAnchor? = nil,
                         offset: CGFloat = 0,
-                        relation: NSLayoutRelation = .equal,
+                        relation: NSLayoutConstraint.Relation = .equal,
                         priority: UILayoutPriority = .required,
                         isActive: Bool = true,
                         logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -505,6 +509,8 @@ extension UIView {
             return leadingAnchor.constraint(lessThanOrEqualTo: anchor ?? view.leadingAnchor, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return leadingAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.leadingAnchor, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -521,7 +527,7 @@ extension UIView {
     @discardableResult
     func leftToRight(of view: UIView,
                             offset: CGFloat = 0,
-                            relation: NSLayoutRelation = .equal,
+                            relation: NSLayoutConstraint.Relation = .equal,
                             priority: UILayoutPriority = .required,
                             isActive: Bool = true,
                             logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -548,7 +554,7 @@ extension UIView {
     func left(to view: UIView,
                         anchor: NSLayoutXAxisAnchor? = nil,
                         offset: CGFloat = 0,
-                        relation: NSLayoutRelation = .equal,
+                        relation: NSLayoutConstraint.Relation = .equal,
                         priority: UILayoutPriority = .required,
                         isActive: Bool = true,
                         logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -564,6 +570,8 @@ extension UIView {
             return leftAnchor.constraint(lessThanOrEqualTo: anchor ?? view.leftAnchor, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return leftAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.leftAnchor, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -580,7 +588,7 @@ extension UIView {
     @discardableResult
     func trailingToLeading(of view: UIView,
                                   offset: CGFloat = 0,
-                                  relation: NSLayoutRelation = .equal,
+                                  relation: NSLayoutConstraint.Relation = .equal,
                                   priority: UILayoutPriority = .required,
                                   isActive: Bool = true,
                                   logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -607,7 +615,7 @@ extension UIView {
     func trailing(to view: UIView,
                          anchor: NSLayoutXAxisAnchor? = nil,
                          offset: CGFloat = 0,
-                         relation: NSLayoutRelation = .equal,
+                         relation: NSLayoutConstraint.Relation = .equal,
                          priority: UILayoutPriority = .required,
                          isActive: Bool = true,
                          logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -623,6 +631,8 @@ extension UIView {
             return trailingAnchor.constraint(lessThanOrEqualTo: anchor ?? view.trailingAnchor, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return trailingAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.trailingAnchor, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -639,7 +649,7 @@ extension UIView {
     @discardableResult
     func rightToLeft(of view: UIView,
                             offset: CGFloat = 0,
-                            relation: NSLayoutRelation = .equal,
+                            relation: NSLayoutConstraint.Relation = .equal,
                             priority: UILayoutPriority = .required,
                             isActive: Bool = true,
                             logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -666,7 +676,7 @@ extension UIView {
     func right(to view: UIView,
                       anchor: NSLayoutXAxisAnchor? = nil,
                       offset: CGFloat = 0,
-                      relation: NSLayoutRelation = .equal,
+                      relation: NSLayoutConstraint.Relation = .equal,
                       priority: UILayoutPriority = .required,
                       isActive: Bool = true,
                       logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -682,6 +692,8 @@ extension UIView {
             return rightAnchor.constraint(lessThanOrEqualTo: anchor ?? view.rightAnchor, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return rightAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.rightAnchor, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -698,7 +710,7 @@ extension UIView {
     @discardableResult
     func topToBottom(of view: UIView,
                             offset: CGFloat = 0,
-                            relation: NSLayoutRelation = .equal,
+                            relation: NSLayoutConstraint.Relation = .equal,
                             priority: UILayoutPriority = .required,
                             isActive: Bool = true,
                             logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -725,7 +737,7 @@ extension UIView {
     func top(to view: UIView,
                       anchor: NSLayoutYAxisAnchor? = nil,
                       offset: CGFloat = 0,
-                      relation: NSLayoutRelation = .equal,
+                      relation: NSLayoutConstraint.Relation = .equal,
                       priority: UILayoutPriority = .required,
                       isActive: Bool = true,
                       logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -741,6 +753,8 @@ extension UIView {
             return topAnchor.constraint(lessThanOrEqualTo: anchor ?? view.topAnchor, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return topAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.topAnchor, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -757,7 +771,7 @@ extension UIView {
     @discardableResult
     func bottomToTop(of view: UIView,
                             offset: CGFloat = 0,
-                            relation: NSLayoutRelation = .equal,
+                            relation: NSLayoutConstraint.Relation = .equal,
                             priority: UILayoutPriority = .required,
                             isActive: Bool = true,
                             logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -784,7 +798,7 @@ extension UIView {
     func bottom(to view: UIView,
                        anchor: NSLayoutYAxisAnchor? = nil,
                        offset: CGFloat = 0,
-                       relation: NSLayoutRelation = .equal,
+                       relation: NSLayoutConstraint.Relation = .equal,
                        priority: UILayoutPriority = .required,
                        isActive: Bool = true,
                        logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -800,6 +814,8 @@ extension UIView {
             return bottomAnchor.constraint(lessThanOrEqualTo: anchor ?? view.bottomAnchor, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return bottomAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.bottomAnchor, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -956,7 +972,7 @@ extension UIView {
     func widthToSuperview( _ dimension: NSLayoutDimension? = nil,
                                   multiplier: CGFloat = 1,
                                   offset: CGFloat = 0,
-                                  relation: NSLayoutRelation = .equal,
+                                  relation: NSLayoutConstraint.Relation = .equal,
                                   priority: UILayoutPriority = .required,
                                   isActive: Bool = true,
                                   logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -983,7 +999,7 @@ extension UIView {
     func heightToSuperview( _ dimension: NSLayoutDimension? = nil,
                                    multiplier: CGFloat = 1,
                                    offset: CGFloat = 0,
-                                   relation: NSLayoutRelation = .equal,
+                                   relation: NSLayoutConstraint.Relation = .equal,
                                    priority: UILayoutPriority = .required,
                                    isActive: Bool = true,
                                    logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {

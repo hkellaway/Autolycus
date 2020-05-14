@@ -12,10 +12,10 @@ import UIKit
 extension NSLayoutConstraint {
     
     func hasValues(firstItem firstItemTag: Int,
-                   firstAttribute: NSLayoutAttribute,
-                   relation: NSLayoutRelation,
+                   firstAttribute: NSLayoutConstraint.Attribute,
+                   relation: NSLayoutConstraint.Relation,
                    secondItem secondItemTag: Int,
-                   secondAttribute: NSLayoutAttribute) -> Bool {
+                   secondAttribute: NSLayoutConstraint.Attribute) -> Bool {
         guard
             let firstTag = (self.firstItem as? UIView)?.tag,
             let secondTag = (self.secondItem as? UIView)?.tag else {

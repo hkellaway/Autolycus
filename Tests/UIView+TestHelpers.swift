@@ -12,7 +12,7 @@ import UIKit
 
 extension UIView {
     
-    func firstItem(constraint type: NSLayoutAttribute) -> UIView? {
+    func firstItem(constraint type: NSLayoutConstraint.Attribute) -> UIView? {
         switch type {
         case .centerX:
             return centerXConstraint()?.firstItem as? UIView
@@ -37,7 +37,7 @@ extension UIView {
         }
     }
     
-    func secondItem(constraint type: NSLayoutAttribute) -> UIView? {
+    func secondItem(constraint type: NSLayoutConstraint.Attribute) -> UIView? {
         switch type {
         case .centerX:
             return centerXConstraint()?.secondItem as? UIView
@@ -62,7 +62,7 @@ extension UIView {
         }
     }
     
-    func firstAttribute(constraint type: NSLayoutAttribute) -> NSLayoutAttribute? {
+    func firstAttribute(constraint type: NSLayoutConstraint.Attribute) -> NSLayoutConstraint.Attribute? {
         switch type {
         case .centerX:
             return centerXConstraint()?.firstAttribute
@@ -87,7 +87,7 @@ extension UIView {
         }
     }
     
-    func secondAttribute(constraint type: NSLayoutAttribute) -> NSLayoutAttribute? {
+    func secondAttribute(constraint type: NSLayoutConstraint.Attribute) -> NSLayoutConstraint.Attribute? {
         switch type {
         case .centerX:
             return centerXConstraint()?.secondAttribute
