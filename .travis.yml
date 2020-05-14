@@ -1,9 +1,9 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode11.1
 
 before_install:
-   - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+- travis_wait 30 pod install
 
 script:
-   - xcodebuild test -project Autolycus.xcodeproj -scheme AutolycusTests -destination 'platform=iOS Simulator,name=iPhone 6,OS=11.0'
+   - xcodebuild test -project Autolycus.xcodeproj -scheme AutolycusTests -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.1'
    - pod lib lint --quick
