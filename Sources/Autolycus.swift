@@ -1,7 +1,5 @@
 //
 //  Autolycus.swift
-//
-//  UIView+Autolycus.swift
 //  Autolycus
 //
 // Copyright (c) 2020 Harlan Kellaway
@@ -27,398 +25,152 @@
 
 import UIKit
 
-public protocol Constrainable: class {
-    var parent: UIView { get }
-    var target: UIView { get }
+public class ConstrainableView: UIView {
+    
+    func child(of other: UIView) -> Self {
+        translatesAutoresizingMaskIntoConstraints = false
+        other.addSubview(self)
+        return self
+    }
+    
+    @discardableResult
+    func top<YAxisAnchor>(
+        to anchor: KeyPath<UIView, YAxisAnchor>,
+        of otherView: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> Self where YAxisAnchor: NSLayoutYAxisAnchor {
+        let view = otherView ?? superview
+        precondition(otherView != nil, "ConstrainableView assumes a view to constrain to.")
+        addTopConstraint(to: anchor, of: view!, relation: relation, constant: constant, priority: priority)
+        return self
+    }
+    
 }
 
-public enum ConstraintRelation {
-    case equal
-    case equalOrLess
-    case equalOrGreater
-}
-
-extension Constrainable {
-
+public extension UIView {
+    
     @discardableResult
-    public func add(to parent: UIView) -> Self {
-        target.translatesAutoresizingMaskIntoConstraints = false
-        parent.addSubview(target)
-
-        return self
-    }
-}
-
-extension Constrainable {
-
-    @discardableResult
-    public func addTopConstraint<YAxis>(
-        to anchor: KeyPath<UIView, YAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
+    func addTopConstraint<YAxisAnchor>(
+        to anchor: KeyPath<UIView, YAxisAnchor>,
+        of otherView: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
         constant: CGFloat = 0,
         priority: UILayoutPriority = .required
-        ) -> NSLayoutConstraint where YAxis: NSLayoutYAxisAnchor {
-        return target.topAnchor
-            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
+        ) -> NSLayoutConstraint? where YAxisAnchor: NSLayoutYAxisAnchor {
+        guard let otherView = otherView else { return nil }
+        return topAnchor
+            .constraint(to: otherView[keyPath: anchor], relation: relation)
             .offset(constant)
             .priority(priority)
             .activate()
     }
+    
+//    @discardableResult
+//    func addTopConstraint<NSLayoutYAxisAnchor>(
+//        to anchor: KeyPath<UIView, NSLayoutYAxisAnchor>,
+//        of view: UIView? = nil,
+//        relation: NSLayoutConstraint.Relation = .equal,
+//        constant: CGFloat = 0,
+//        priority: UILayoutPriority = .required
+//        ) -> NSLayoutConstraint {
+//        return topAnchor
+//            .constraint(to: (view ?? superview)![keyPath: anchor], relation: relation)
+//            .offset(constant)
+//            .priority(priority)
+//            .activate()
+//    }
+//
+//    @discardableResult
+//    func top<NSLayoutYAxisAnchor>(
+//        to anchor: KeyPath<UIView, NSLayoutYAxisAnchor>,
+//        of view: UIView? = nil,
+//        relation: NSLayoutConstraint.Relation = .equal,
+//        constant: CGFloat = 0,
+//        priority: UILayoutPriority = .required
+//        ) -> Self {
+//        addTopConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
+//        return self
+//    }
 
-    @discardableResult
-    public func top<YAxis>(
-        to anchor: KeyPath<UIView, YAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> Self where YAxis: NSLayoutYAxisAnchor {
-        addTopConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
-        return self
-    }
-
-    @discardableResult
-    public func addBottomConstraint<YAxis>(
-        to anchor: KeyPath<UIView, YAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> NSLayoutConstraint where YAxis: NSLayoutYAxisAnchor {
-        return target.bottomAnchor
-            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
-            .offset(-constant)
-            .priority(priority)
-            .activate()
-    }
-
-    @discardableResult
-    public func bottom<YAxis>(
-        to anchor: KeyPath<UIView, YAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> Self where YAxis: NSLayoutYAxisAnchor {
-        addBottomConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
-        return self
-    }
-
-    @discardableResult
-    public func addCenterYConstraint<YAxis>(
-        to anchor: KeyPath<UIView, YAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> NSLayoutConstraint where YAxis: NSLayoutYAxisAnchor {
-        return target.centerYAnchor
-            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
-            .offset(constant)
-            .priority(priority)
-            .activate()
-    }
-
-    @discardableResult
-    public func centerY<YAxis>(
-        to anchor: KeyPath<UIView, YAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> Self where YAxis: NSLayoutYAxisAnchor {
-        addCenterYConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
-        return self
-    }
-}
-
-extension Constrainable {
-
-    @discardableResult
-    public func addLeftConstraint<XAxis>(
-        to anchor: KeyPath<UIView, XAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> NSLayoutConstraint where XAxis: NSLayoutXAxisAnchor {
-        return target.leftAnchor
-            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
-            .offset(constant)
-            .priority(priority)
-            .activate()
-    }
-
-    @discardableResult
-    public func left<XAxis>(
-        to anchor: KeyPath<UIView, XAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> Self where XAxis: NSLayoutXAxisAnchor {
-        addLeftConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
-        return self
-    }
-
-    @discardableResult
-    public func addRightConstraint<XAxis>(
-        to anchor: KeyPath<UIView, XAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> NSLayoutConstraint where XAxis: NSLayoutXAxisAnchor {
-        return target.rightAnchor
-            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
-            .offset(-constant)
-            .priority(priority)
-            .activate()
-    }
-
-    @discardableResult
-    public func right<XAxis>(
-        to anchor: KeyPath<UIView, XAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> Self where XAxis: NSLayoutXAxisAnchor {
-        addRightConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
-        return self
-    }
-
-    @discardableResult
-    public func addLeadingConstraint<XAxis>(
-        to anchor: KeyPath<UIView, XAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> NSLayoutConstraint where XAxis: NSLayoutXAxisAnchor {
-        return target.leadingAnchor
-            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
-            .offset(constant)
-            .priority(priority)
-            .activate()
-    }
-
-    @discardableResult
-    public func leading<XAxis>(
-        to anchor: KeyPath<UIView, XAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> Self where XAxis: NSLayoutXAxisAnchor {
-        addLeadingConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
-        return self
-    }
-
-    @discardableResult
-    public func addTrailingConstraint<XAxis>(
-        to anchor: KeyPath<UIView, XAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> NSLayoutConstraint where XAxis: NSLayoutXAxisAnchor {
-        return target.trailingAnchor
-            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
-            .offset(-constant)
-            .priority(priority)
-            .activate()
-    }
-
-    @discardableResult
-    public func trailing<XAxis>(
-        to anchor: KeyPath<UIView, XAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> Self where XAxis: NSLayoutXAxisAnchor {
-        addTrailingConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
-        return self
-    }
-
-    @discardableResult
-    public func addCenterXConstraint<XAxis>(
-        to anchor: KeyPath<UIView, XAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> NSLayoutConstraint where XAxis: NSLayoutXAxisAnchor {
-        return target.centerXAnchor
-            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
-            .offset(constant)
-            .priority(priority)
-            .activate()
-    }
-
-    @discardableResult
-    public func centerX<XAxis>(
-        to anchor: KeyPath<UIView, XAxis>,
-        of view: UIView? = nil,
-        relation: ConstraintRelation = .equal,
-        constant: CGFloat = 0,
-        priority: UILayoutPriority = .required
-        ) -> Self where XAxis: NSLayoutXAxisAnchor {
-        addCenterXConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
-        return self
-    }
-}
-
-extension Constrainable {
-
-    @discardableResult
-    public func addWidth(
-        _ constant: CGFloat,
-        relation: ConstraintRelation = .equal,
-        priority: UILayoutPriority = .required
-        ) -> NSLayoutConstraint {
-        return target.widthAnchor
-            .constraint(toConstant: constant, relation: relation)
-            .priority(priority)
-            .activate()
-    }
-
-    @discardableResult
-    public func width(
-        _ constant: CGFloat,
-        relation: ConstraintRelation = .equal,
-        priority: UILayoutPriority = .required
-        ) -> Self {
-        addWidth(constant, relation: relation, priority: priority)
-        return self
-    }
-
-    @discardableResult
-    public func addWidth<XAxis>(
-        to dimension: KeyPath<UIView, XAxis>,
-        of view: UIView? = nil,
-        multiplier: CGFloat = 1,
-        constant: CGFloat = 0,
-        relation: ConstraintRelation = .equal,
-        priority: UILayoutPriority = .required
-        ) -> NSLayoutConstraint where XAxis: NSLayoutDimension {
-        return target.widthAnchor
-            .constraint(to: (view ?? parent)[keyPath: dimension], multiplier: multiplier, relation: relation)
-            .offset(constant)
-            .priority(priority)
-            .activate()
-    }
-
-    @discardableResult
-    public func width<XAxis>(
-        to dimension: KeyPath<UIView, XAxis>,
-        of view: UIView? = nil,
-        multiplier: CGFloat = 1,
-        constant: CGFloat = 0,
-        relation: ConstraintRelation = .equal,
-        priority: UILayoutPriority = .required
-        ) -> Self where XAxis: NSLayoutDimension {
-        addWidth(to: dimension, of: view, multiplier: multiplier, constant: constant, relation: relation, priority: priority)
-        return self
-    }
-
-    @discardableResult
-    public func addHeight(
-        _ constant: CGFloat,
-        relation: ConstraintRelation = .equal,
-        priority: UILayoutPriority = .required
-        ) -> NSLayoutConstraint {
-        return target.heightAnchor
-            .constraint(toConstant: constant, relation: relation)
-            .priority(priority)
-            .activate()
-    }
-
-    @discardableResult
-    public func height(
-        _ constant: CGFloat,
-        relation: ConstraintRelation = .equal,
-        priority: UILayoutPriority = .required
-        ) -> Self {
-        addHeight(constant, relation: relation, priority: priority)
-        return self
-    }
-
-    @discardableResult
-    public func addHeight<YAxis>(
-        to dimension: KeyPath<UIView, YAxis>,
-        of view: UIView? = nil,
-        multiplier: CGFloat = 1,
-        constant: CGFloat = 0,
-        relation: ConstraintRelation = .equal,
-        priority: UILayoutPriority = .required
-        ) -> NSLayoutConstraint where YAxis: NSLayoutDimension {
-        return target.heightAnchor
-            .constraint(to: (view ?? parent)[keyPath: dimension], multiplier: multiplier, relation: relation)
-            .offset(constant)
-            .priority(priority)
-            .activate()
-    }
-
-    @discardableResult
-    public func height<YAxis>(
-        to dimension: KeyPath<UIView, YAxis>,
-        of view: UIView? = nil,
-        multiplier: CGFloat = 1,
-        constant: CGFloat = 0,
-        relation: ConstraintRelation = .equal,
-        priority: UILayoutPriority = .required
-        ) -> Self where YAxis: NSLayoutDimension {
-        addHeight(to: dimension, of: view, multiplier: multiplier, constant: constant, relation: relation, priority: priority)
-        return self
-    }
-}
-
-extension UIView: Constrainable {
-    public var parent: UIView {
-        guard let parent = superview else { fatalError("The view has no superview") }
-        return parent
-    }
-
-    public var target: UIView {
-        return self
-    }
 }
 
 extension NSLayoutXAxisAnchor {
 
     internal func constraint(
         to anchor: NSLayoutXAxisAnchor,
-        relation: ConstraintRelation
+        relation: NSLayoutConstraint.Relation
         ) -> NSLayoutConstraint {
         switch relation {
         case .equal:
             return constraint(equalTo: anchor)
-        case .equalOrLess:
+        case .lessThanOrEqual:
             return constraint(lessThanOrEqualTo: anchor)
-        case .equalOrGreater:
+        case .greaterThanOrEqual:
             return constraint(greaterThanOrEqualTo: anchor)
+        @unknown default:
+            fatalError()
         }
     }
+    
 }
 
 extension NSLayoutYAxisAnchor {
 
     internal func constraint(
         to anchor: NSLayoutYAxisAnchor,
-        relation: ConstraintRelation
+        relation: NSLayoutConstraint.Relation
         ) -> NSLayoutConstraint {
         switch relation {
         case .equal:
             return constraint(equalTo: anchor)
-        case .equalOrLess:
+        case .lessThanOrEqual:
             return constraint(lessThanOrEqualTo: anchor)
-        case .equalOrGreater:
+        case .greaterThanOrEqual:
             return constraint(greaterThanOrEqualTo: anchor)
+        @unknown default:
+            fatalError()
         }
     }
+    
+}
+
+extension NSLayoutDimension {
+    
+    internal func constraint(
+        to dimension: NSLayoutDimension,
+        multiplier: CGFloat,
+        relation: NSLayoutConstraint.Relation
+        ) -> NSLayoutConstraint {
+        switch relation {
+        case .equal:
+            return constraint(equalTo: dimension, multiplier: multiplier)
+        case .lessThanOrEqual:
+            return constraint(lessThanOrEqualTo: dimension, multiplier: multiplier)
+        case .greaterThanOrEqual:
+            return constraint(greaterThanOrEqualTo: dimension, multiplier: multiplier)
+        @unknown default:
+            fatalError()
+        }
+    }
+
+    internal func constraint(
+        toConstant constant: CGFloat,
+        relation: NSLayoutConstraint.Relation = .equal
+        ) -> NSLayoutConstraint {
+        switch relation {
+        case .equal:
+            return constraint(equalToConstant: constant)
+        case .lessThanOrEqual:
+            return constraint(lessThanOrEqualToConstant: constant)
+        case .greaterThanOrEqual:
+            return constraint(greaterThanOrEqualToConstant: constant)
+        @unknown default:
+            fatalError()
+        }
+    }
+    
 }
 
 extension NSLayoutConstraint {
@@ -442,37 +194,364 @@ extension NSLayoutConstraint {
         isActive = false
         return self
     }
+    
 }
 
-extension NSLayoutDimension {
-    
-    internal func constraint(
-        to dimension: NSLayoutDimension,
-        multiplier: CGFloat,
-        relation: ConstraintRelation
-        ) -> NSLayoutConstraint {
-        switch relation {
-        case .equal:
-            return constraint(equalTo: dimension, multiplier: multiplier)
-        case .equalOrLess:
-            return constraint(lessThanOrEqualTo: dimension, multiplier: multiplier)
-        case .equalOrGreater:
-            return constraint(greaterThanOrEqualTo: dimension, multiplier: multiplier)
-        }
+// earlier ///
+
+public protocol Constrainable: class {
+    var parent: UIView { get }
+    var target: UIView { get }
+}
+
+extension Constrainable {
+
+    @discardableResult
+    public func add(to parent: UIView) -> Self {
+        target.translatesAutoresizingMaskIntoConstraints = false
+        parent.addSubview(target)
+
+        return self
+    }
+}
+
+// >>>
+
+extension Constrainable {
+
+    @discardableResult
+    public func addTopConstraint<YAxis>(
+        to anchor: KeyPath<UIView, YAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> NSLayoutConstraint where YAxis: NSLayoutYAxisAnchor {
+        return target.topAnchor
+            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
+            .offset(constant)
+            .priority(priority)
+            .activate()
     }
 
-    internal func constraint(
-        toConstant constant: CGFloat,
-        relation: ConstraintRelation = .equal
+    @discardableResult
+    public func top<YAxis>(
+        to anchor: KeyPath<UIView, YAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> Self where YAxis: NSLayoutYAxisAnchor {
+        addTopConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
+        return self
+    }
+
+    @discardableResult
+    public func addBottomConstraint<YAxis>(
+        to anchor: KeyPath<UIView, YAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> NSLayoutConstraint where YAxis: NSLayoutYAxisAnchor {
+        return target.bottomAnchor
+            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
+            .offset(-constant)
+            .priority(priority)
+            .activate()
+    }
+
+    @discardableResult
+    public func bottom<YAxis>(
+        to anchor: KeyPath<UIView, YAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> Self where YAxis: NSLayoutYAxisAnchor {
+        addBottomConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
+        return self
+    }
+
+    @discardableResult
+    public func addCenterYConstraint<YAxis>(
+        to anchor: KeyPath<UIView, YAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> NSLayoutConstraint where YAxis: NSLayoutYAxisAnchor {
+        return target.centerYAnchor
+            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
+            .offset(constant)
+            .priority(priority)
+            .activate()
+    }
+
+    @discardableResult
+    public func centerY<YAxis>(
+        to anchor: KeyPath<UIView, YAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> Self where YAxis: NSLayoutYAxisAnchor {
+        addCenterYConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
+        return self
+    }
+}
+
+extension Constrainable {
+
+    @discardableResult
+    public func addLeftConstraint<XAxis>(
+        to anchor: KeyPath<UIView, XAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> NSLayoutConstraint where XAxis: NSLayoutXAxisAnchor {
+        return target.leftAnchor
+            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
+            .offset(constant)
+            .priority(priority)
+            .activate()
+    }
+
+    @discardableResult
+    public func left<XAxis>(
+        to anchor: KeyPath<UIView, XAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> Self where XAxis: NSLayoutXAxisAnchor {
+        addLeftConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
+        return self
+    }
+
+    @discardableResult
+    public func addRightConstraint<XAxis>(
+        to anchor: KeyPath<UIView, XAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> NSLayoutConstraint where XAxis: NSLayoutXAxisAnchor {
+        return target.rightAnchor
+            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
+            .offset(-constant)
+            .priority(priority)
+            .activate()
+    }
+
+    @discardableResult
+    public func right<XAxis>(
+        to anchor: KeyPath<UIView, XAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> Self where XAxis: NSLayoutXAxisAnchor {
+        addRightConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
+        return self
+    }
+
+    @discardableResult
+    public func addLeadingConstraint<XAxis>(
+        to anchor: KeyPath<UIView, XAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> NSLayoutConstraint where XAxis: NSLayoutXAxisAnchor {
+        return target.leadingAnchor
+            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
+            .offset(constant)
+            .priority(priority)
+            .activate()
+    }
+
+    @discardableResult
+    public func leading<XAxis>(
+        to anchor: KeyPath<UIView, XAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> Self where XAxis: NSLayoutXAxisAnchor {
+        addLeadingConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
+        return self
+    }
+
+    @discardableResult
+    public func addTrailingConstraint<XAxis>(
+        to anchor: KeyPath<UIView, XAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> NSLayoutConstraint where XAxis: NSLayoutXAxisAnchor {
+        return target.trailingAnchor
+            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
+            .offset(-constant)
+            .priority(priority)
+            .activate()
+    }
+
+    @discardableResult
+    public func trailing<XAxis>(
+        to anchor: KeyPath<UIView, XAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> Self where XAxis: NSLayoutXAxisAnchor {
+        addTrailingConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
+        return self
+    }
+
+    @discardableResult
+    public func addCenterXConstraint<XAxis>(
+        to anchor: KeyPath<UIView, XAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> NSLayoutConstraint where XAxis: NSLayoutXAxisAnchor {
+        return target.centerXAnchor
+            .constraint(to: (view ?? parent)[keyPath: anchor], relation: relation)
+            .offset(constant)
+            .priority(priority)
+            .activate()
+    }
+
+    @discardableResult
+    public func centerX<XAxis>(
+        to anchor: KeyPath<UIView, XAxis>,
+        of view: UIView? = nil,
+        relation: NSLayoutConstraint.Relation = .equal,
+        constant: CGFloat = 0,
+        priority: UILayoutPriority = .required
+        ) -> Self where XAxis: NSLayoutXAxisAnchor {
+        addCenterXConstraint(to: anchor, of: view, relation: relation, constant: constant, priority: priority)
+        return self
+    }
+}
+
+extension Constrainable {
+
+    @discardableResult
+    public func addWidth(
+        _ constant: CGFloat,
+        relation: NSLayoutConstraint.Relation = .equal,
+        priority: UILayoutPriority = .required
         ) -> NSLayoutConstraint {
-        switch relation {
-        case .equal:
-            return constraint(equalToConstant: constant)
-        case .equalOrLess:
-            return constraint(lessThanOrEqualToConstant: constant)
-        case .equalOrGreater:
-            return constraint(greaterThanOrEqualToConstant: constant)
-        }
+        return target.widthAnchor
+            .constraint(toConstant: constant, relation: relation)
+            .priority(priority)
+            .activate()
+    }
+
+    @discardableResult
+    public func width(
+        _ constant: CGFloat,
+        relation: NSLayoutConstraint.Relation = .equal,
+        priority: UILayoutPriority = .required
+        ) -> Self {
+        addWidth(constant, relation: relation, priority: priority)
+        return self
+    }
+
+    @discardableResult
+    public func addWidth<XAxis>(
+        to dimension: KeyPath<UIView, XAxis>,
+        of view: UIView? = nil,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        relation: NSLayoutConstraint.Relation = .equal,
+        priority: UILayoutPriority = .required
+        ) -> NSLayoutConstraint where XAxis: NSLayoutDimension {
+        return target.widthAnchor
+            .constraint(to: (view ?? parent)[keyPath: dimension], multiplier: multiplier, relation: relation)
+            .offset(constant)
+            .priority(priority)
+            .activate()
+    }
+
+    @discardableResult
+    public func width<XAxis>(
+        to dimension: KeyPath<UIView, XAxis>,
+        of view: UIView? = nil,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        relation: NSLayoutConstraint.Relation = .equal,
+        priority: UILayoutPriority = .required
+        ) -> Self where XAxis: NSLayoutDimension {
+        addWidth(to: dimension, of: view, multiplier: multiplier, constant: constant, relation: relation, priority: priority)
+        return self
+    }
+
+    @discardableResult
+    public func addHeight(
+        _ constant: CGFloat,
+        relation: NSLayoutConstraint.Relation = .equal,
+        priority: UILayoutPriority = .required
+        ) -> NSLayoutConstraint {
+        return target.heightAnchor
+            .constraint(toConstant: constant, relation: relation)
+            .priority(priority)
+            .activate()
+    }
+
+    @discardableResult
+    public func height(
+        _ constant: CGFloat,
+        relation: NSLayoutConstraint.Relation = .equal,
+        priority: UILayoutPriority = .required
+        ) -> Self {
+        addHeight(constant, relation: relation, priority: priority)
+        return self
+    }
+
+    @discardableResult
+    public func addHeight<YAxis>(
+        to dimension: KeyPath<UIView, YAxis>,
+        of view: UIView? = nil,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        relation: NSLayoutConstraint.Relation = .equal,
+        priority: UILayoutPriority = .required
+        ) -> NSLayoutConstraint where YAxis: NSLayoutDimension {
+        return target.heightAnchor
+            .constraint(to: (view ?? parent)[keyPath: dimension], multiplier: multiplier, relation: relation)
+            .offset(constant)
+            .priority(priority)
+            .activate()
+    }
+
+    @discardableResult
+    public func height<YAxis>(
+        to dimension: KeyPath<UIView, YAxis>,
+        of view: UIView? = nil,
+        multiplier: CGFloat = 1,
+        constant: CGFloat = 0,
+        relation: NSLayoutConstraint.Relation = .equal,
+        priority: UILayoutPriority = .required
+        ) -> Self where YAxis: NSLayoutDimension {
+        addHeight(to: dimension, of: view, multiplier: multiplier, constant: constant, relation: relation, priority: priority)
+        return self
+    }
+}
+
+extension UIView: Constrainable {
+    public var parent: UIView {
+        guard let parent = superview else { fatalError("The view has no superview") }
+        return parent
+    }
+
+    public var target: UIView {
+        return self
     }
 }
 
@@ -502,13 +581,13 @@ extension Constrainable {
     }
 
     @discardableResult
-    public func center(in view: UIView? = nil, withMargin margin: CGFloat = 0, relation: ConstraintRelation = .equal) -> Self {
+    public func center(in view: UIView? = nil, withMargin margin: CGFloat = 0, relation: NSLayoutConstraint.Relation = .equal) -> Self {
         return centerX(to: \.centerXAnchor, of: view, relation: relation, constant: margin)
             .centerY(to: \.centerYAnchor, of: view, relation: relation, constant: margin)
     }
 
     @discardableResult
-    public func size(_ size: CGSize, relation: ConstraintRelation = .equal) -> Self {
+    public func size(_ size: CGSize, relation: NSLayoutConstraint.Relation = .equal) -> Self {
         return width(size.width, relation: relation)
             .height(size.height, relation: relation)
     }

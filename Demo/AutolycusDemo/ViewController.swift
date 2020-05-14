@@ -17,6 +17,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // view1.add(to: sharedView)
+        // view2.add(to: sharedView)
+        // view1.top(to: \.topAnchor, of: view2)
+        
         myView.backgroundColor = .magenta
         secondView.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
         secondView.backgroundColor = .blue
@@ -32,7 +36,7 @@ class ViewController: UIViewController {
     }
     
     private func manual() {
-        myView.add(to: secondView)
+        let _ = myView.add(to: secondView)
         
         let constraints = [
             myView.addLeadingConstraint(to: \.trailingAnchor),
