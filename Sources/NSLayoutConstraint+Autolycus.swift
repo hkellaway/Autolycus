@@ -25,7 +25,7 @@
 
 import Foundation
 
-extension NSLayoutConstraint {
+public extension NSLayoutConstraint {
     
     /// Sets priority of the constraint and returns same instance.
     ///

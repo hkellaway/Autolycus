@@ -25,7 +25,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     
     /// Prepares the view for programmatic constraints.
     /// i.e. Sets translatesAutoresizingMaskIntoConstraints to false.
