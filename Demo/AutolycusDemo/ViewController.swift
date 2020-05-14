@@ -23,18 +23,23 @@ class ViewController: UIViewController {
         secondView.center = view.center
         
         view.addSubview(secondView)
-        secondView.addSubview(myView)
         
-        myView.constrain().widthToSuperview()
-        myView.constrain().heightToSuperview()
-        myView.constrain().centerInSuperview(offset: CGPoint(x: 50, y: 50))
+        myView.add(to: secondView)
+            .width(to: \.widthAnchor)
+            .height(to: \.heightAnchor)
+            .centerX(to: \.centerXAnchor, constant: 50)
+            .centerY(to: \.centerYAnchor, constant: 50)
     }
     
     private func manual() {
-        myView.constrain()
-        let constraints = [myView.leadingToTrailing(of: secondView)]
-            + [myView.topToBottom(of: secondView)]
-            + myView.size(CGSize(width: 50, height: 50))
+        myView.add(to: secondView)
+        
+        let constraints = [
+            myView.addLeadingConstraint(to: \.trailingAnchor),
+            myView.addTopConstraint(to: \.bottomAnchor),
+            myView.addWidth(50),
+            myView.addHeight(50)
+        ]
         NSLayoutConstraint.activate(constraints)
     }
 

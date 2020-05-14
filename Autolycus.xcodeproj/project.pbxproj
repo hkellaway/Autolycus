@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F0B5155246DEBB000BE42BC /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B5154246DEBB000BE42BC /* Test.swift */; };
+		2F0B5157246DEBFE00BE42BC /* Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B5156246DEBFE00BE42BC /* Autolycus.swift */; };
 		DC6E03C81FAD33250040BDBC /* Autolycus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6E03BE1FAD33250040BDBC /* Autolycus.framework */; };
 		DC6E03DE1FAD349D0040BDBC /* Autolycus.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6E03DC1FAD348E0040BDBC /* Autolycus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		2F0B5153246DEBAF00BE42BC /* AutolycusTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AutolycusTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		2F0B5154246DEBB000BE42BC /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		2F0B5156246DEBFE00BE42BC /* Autolycus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autolycus.swift; sourceTree = "<group>"; };
 		DC6E03BE1FAD33250040BDBC /* Autolycus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Autolycus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6E03C71FAD33250040BDBC /* AutolycusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutolycusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC6E03DC1FAD348E0040BDBC /* Autolycus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Autolycus.h; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		DC6E03DB1FAD348E0040BDBC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2F0B5156246DEBFE00BE42BC /* Autolycus.swift */,
 				DC6E03DC1FAD348E0040BDBC /* Autolycus.h */,
 				DC6E03DD1FAD348E0040BDBC /* Info.plist */,
 			);
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F0B5155246DEBB000BE42BC /* Test.swift in Sources */,
+				2F0B5157246DEBFE00BE42BC /* Autolycus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
