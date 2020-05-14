@@ -1,6 +1,6 @@
 {
   "name": "Autolycus",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "Autolayout DSL for writing layout and constraints programmatically",
   "description": "Autolayout DSL for writing layout and constraints programmatically.",
   "homepage": "https://github.com/hkellaway/Autolycus",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/hkellaway/Autolycus.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "10.0"

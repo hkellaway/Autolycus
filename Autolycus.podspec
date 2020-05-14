@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Autolycus"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "Autolayout DSL for writing layout and constraints programmatically"
   s.description      = "Autolayout DSL for writing layout and constraints programmatically."
   s.homepage         = "https://github.com/hkellaway/Autolycus"
