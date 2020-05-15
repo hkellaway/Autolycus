@@ -1,5 +1,5 @@
 PODS:
-  - Autolycus (0.0.1)
+  - Autolycus (0.1.0)
 
 DEPENDENCIES:
   - Autolycus (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Autolycus: 8d071708a80fd82842032d5159e668eae57ba890
+  Autolycus: 911768b3b764d7c76e365408933f4936c4ca9a40
 
 PODFILE CHECKSUM: 268ca920c6bde932fb42b685f1d7c8ae48bec07c
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.9.1

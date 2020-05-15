@@ -7,228 +7,235 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13571F5AA42D77198718FC833B5AD8F9 /* Autolycus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D46A9DE3306BDAC45B40D533CE9A97C /* Autolycus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		23C6515D5160027CFA76BB92AF7122E3 /* NSLayoutConstraint+Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE390F6AC8534C0453A887F41517C365 /* NSLayoutConstraint+Autolycus.swift */; };
-		3F09C1ECE0E829F871C496D68561FE81 /* AutolycusLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BEF20D1C5DB810715B0C6489F20473 /* AutolycusLogger.swift */; };
-		6F6E242F5AE920B615B4F386E331CB44 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049F795E68ED30F73F6A962AF58249E /* Logger.swift */; };
-		9682882C78787D01052AC0DA8698EC7D /* Pods-AutolycusDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1DE130864FA25AC4B12254F5662C9D /* Pods-AutolycusDemo-dummy.m */; };
-		99E35FC68C3A45D0F314A4D451F81FB2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A17E04B40B5D8A62409309DD94EFCBA1 /* UIView+Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2738348414180843EFD1C1138C4C5754 /* UIView+Autolycus.swift */; };
-		DFAA30097A42A1FA65DBF169CFE6203B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		F2DFE4476D6FCE55B119E12A07FABE53 /* Pods-AutolycusDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B71F966F6C2DA8C5FA188B461867CB73 /* Pods-AutolycusDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2ED85304162ECE3144AE6FD935AC30C /* Autolycus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4B5D881C1C68B45CD85A9928AA2BDB /* Autolycus-dummy.m */; };
+		419E1E0D235531BACCEA9FCF70E36BB2 /* Autolycus-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DB9E2198E432B890EA7A1F6992D49A9 /* Autolycus-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		651BDF538D8288B86DE152AB370A4CEC /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDF208C9325B2FADC9E5E0DFAA2840B /* Logger.swift */; };
+		79541F8C2B89991B4B20ED0747D2F012 /* Pods-AutolycusDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE96764A3783D184F87B9CB693D091F7 /* Pods-AutolycusDemo-dummy.m */; };
+		9EE1E02CF3294CEC659DAC948661AFD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		BB25E2F68328A0713294684311AD14A7 /* Pods-AutolycusDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A9FE11AB7B3A034B20E9F736D826259 /* Pods-AutolycusDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6173425E24AD805FEDBCF951D0CBC13 /* AutolycusLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C832D17EECC0F9F827930E8B139CFB42 /* AutolycusLogger.swift */; };
+		CB1505B782D2BD68DF027EDB7A9FE9C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		CF60F88F310CDC835AF15A88D06C0ADC /* NSLayoutConstraint+Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C84BCBEE6109CEBE3670880DE892B0 /* NSLayoutConstraint+Autolycus.swift */; };
+		E8628EDFCCA0EB220414875A49E2F071 /* Autolycus-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C540F35DD9F0C3EA932F868B6CC82C /* Autolycus-dummy.m */; };
+		EAE107F90728EFE095B0F148FD0446A2 /* UIView+Autolycus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9422CE2C9CB7C8946A642A4C5589F2D8 /* UIView+Autolycus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C1C9E519E75B40AC5170F44D4B972E34 /* PBXContainerItemProxy */ = {
+		66F982807AEFA3DF56E68359D591E15F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F04F4A5AA77C5EBED9F3D821CBEB2464;
+			remoteGlobalIDString = EC4C314B0A8C23DAEFCEA70AF2ACEF72;
 			remoteInfo = Autolycus;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		195EB749E75D91745423223FF1CA17B5 /* Pods-AutolycusDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AutolycusDemo.release.xcconfig"; sourceTree = "<group>"; };
-		2738348414180843EFD1C1138C4C5754 /* UIView+Autolycus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Autolycus.swift"; sourceTree = "<group>"; };
-		3049F795E68ED30F73F6A962AF58249E /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		308EA05499002E54A2783E3D64B87659 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3EBD29BD6A1256A9186EE036458FF475 /* Pods_AutolycusDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AutolycusDemo.framework; path = "Pods-AutolycusDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4561BD7BD326AE4A465073061C3B2300 /* Pods-AutolycusDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AutolycusDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		5C0900B9745BCC8AB32076DE3B7EB1CB /* Pods-AutolycusDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AutolycusDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		71F178944F3B254D35C545D1F3DC42F2 /* Pods-AutolycusDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AutolycusDemo-resources.sh"; sourceTree = "<group>"; };
-		7D46A9DE3306BDAC45B40D533CE9A97C /* Autolycus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Autolycus-umbrella.h"; sourceTree = "<group>"; };
-		8B6D406B001C7A1EAA9EBB57B7808225 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93E184C60AC75023BD56FBF1CC3492DA /* Pods-AutolycusDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AutolycusDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9E3CEDA68D77384A79C434CE6CCBA1AB /* Pods-AutolycusDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AutolycusDemo.modulemap"; sourceTree = "<group>"; };
-		B71F966F6C2DA8C5FA188B461867CB73 /* Pods-AutolycusDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AutolycusDemo-umbrella.h"; sourceTree = "<group>"; };
-		BC4EE0C7EF2DE7C71BDD9B4C8B0E2246 /* Autolycus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Autolycus.framework; path = Autolycus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE5B44D03326799651A5D56A8C1CFE3D /* Pods-AutolycusDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AutolycusDemo-frameworks.sh"; sourceTree = "<group>"; };
-		DA1DE130864FA25AC4B12254F5662C9D /* Pods-AutolycusDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AutolycusDemo-dummy.m"; sourceTree = "<group>"; };
-		DB2C4C2832F26F7EDDB04F7ADF62DDAE /* Autolycus.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Autolycus.xcconfig; sourceTree = "<group>"; };
-		DE390F6AC8534C0453A887F41517C365 /* NSLayoutConstraint+Autolycus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Autolycus.swift"; sourceTree = "<group>"; };
-		DE4B5D881C1C68B45CD85A9928AA2BDB /* Autolycus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Autolycus-dummy.m"; sourceTree = "<group>"; };
-		F19BD27FB50F211CAAB2E2971425D661 /* Autolycus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Autolycus.modulemap; sourceTree = "<group>"; };
-		F1BEF20D1C5DB810715B0C6489F20473 /* AutolycusLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AutolycusLogger.swift; sourceTree = "<group>"; };
-		F95C1125D5147B47095D0E9CE550DA3A /* Autolycus-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Autolycus-prefix.pch"; sourceTree = "<group>"; };
+		14C84BCBEE6109CEBE3670880DE892B0 /* NSLayoutConstraint+Autolycus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutConstraint+Autolycus.swift"; path = "Sources/NSLayoutConstraint+Autolycus.swift"; sourceTree = "<group>"; };
+		1A9FE11AB7B3A034B20E9F736D826259 /* Pods-AutolycusDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AutolycusDemo-umbrella.h"; sourceTree = "<group>"; };
+		1DB9E2198E432B890EA7A1F6992D49A9 /* Autolycus-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Autolycus-umbrella.h"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3BDF208C9325B2FADC9E5E0DFAA2840B /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Sources/Logger.swift; sourceTree = "<group>"; };
+		5B97C645A6FA01E7D8B6D055BEFCFD45 /* Pods-AutolycusDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AutolycusDemo-Info.plist"; sourceTree = "<group>"; };
+		66D4639A1ABD43CEC9F84F1F9A98E40D /* Autolycus-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Autolycus-prefix.pch"; sourceTree = "<group>"; };
+		7730331956A3F05F5D383ED9AF1C9A85 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		80C540F35DD9F0C3EA932F868B6CC82C /* Autolycus-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Autolycus-dummy.m"; sourceTree = "<group>"; };
+		9422CE2C9CB7C8946A642A4C5589F2D8 /* UIView+Autolycus.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Autolycus.swift"; path = "Sources/UIView+Autolycus.swift"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A72EA1A0231156615EE2AE72D9E39C76 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		B28EE21639799FAA7FA6CA27783F158E /* Pods-AutolycusDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AutolycusDemo-frameworks.sh"; sourceTree = "<group>"; };
+		C2DACCAA5046879964DED457AF7D5123 /* Pods-AutolycusDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AutolycusDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C2E06EC56B068AE34F0D7E6AFB037BEC /* Pods-AutolycusDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AutolycusDemo.modulemap"; sourceTree = "<group>"; };
+		C832D17EECC0F9F827930E8B139CFB42 /* AutolycusLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutolycusLogger.swift; path = Sources/AutolycusLogger.swift; sourceTree = "<group>"; };
+		CC33A021C1CA0F8667471CCD5FA73BE9 /* Autolycus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Autolycus.release.xcconfig; sourceTree = "<group>"; };
+		CE96764A3783D184F87B9CB693D091F7 /* Pods-AutolycusDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AutolycusDemo-dummy.m"; sourceTree = "<group>"; };
+		D2B1F498DE9EF98D227AD2720F446857 /* Pods-AutolycusDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AutolycusDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		D8493D3A7A2EF9BE21231EBC2957E529 /* Autolycus-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Autolycus-Info.plist"; sourceTree = "<group>"; };
+		E17E2748631BE4B8767399BE809E85C7 /* Autolycus.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Autolycus.modulemap; sourceTree = "<group>"; };
+		E2D14CD5FB9AC6A8A6A3B0C4CEA912BE /* Autolycus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Autolycus.framework; path = Autolycus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F226F2B40AA666188D5BBA84BE50C7F8 /* Pods_AutolycusDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AutolycusDemo.framework; path = "Pods-AutolycusDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F86CF61D812EC3E4C0942E60EAF265C9 /* Pods-AutolycusDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AutolycusDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		F9786E04B8C43EBFB4E372887830AD41 /* Autolycus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Autolycus.debug.xcconfig; sourceTree = "<group>"; };
+		FA8A19906F19F0E73FBCA3D80C4AFE13 /* Pods-AutolycusDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AutolycusDemo.release.xcconfig"; sourceTree = "<group>"; };
+		FDF3B617E59CB7206D3781BC431D928B /* Autolycus.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Autolycus.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DC4E60DB8F06CAAEB5533BC5AE0DAA7D /* Frameworks */ = {
+		25001D4110837EC6E75331F1F201A86E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99E35FC68C3A45D0F314A4D451F81FB2 /* Foundation.framework in Frameworks */,
+				9EE1E02CF3294CEC659DAC948661AFD5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DEE65EDBA976D604C415A4ED9AD82FED /* Frameworks */ = {
+		A05149B477EB213645E50E1AF4523159 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFAA30097A42A1FA65DBF169CFE6203B /* Foundation.framework in Frameworks */,
+				CB1505B782D2BD68DF027EDB7A9FE9C2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10F66B509186B1CB4C37D9D5B0110209 /* Support Files */ = {
+		1A87E57A92AD539D5AFDC1E17F643F44 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F19BD27FB50F211CAAB2E2971425D661 /* Autolycus.modulemap */,
-				DB2C4C2832F26F7EDDB04F7ADF62DDAE /* Autolycus.xcconfig */,
-				DE4B5D881C1C68B45CD85A9928AA2BDB /* Autolycus-dummy.m */,
-				F95C1125D5147B47095D0E9CE550DA3A /* Autolycus-prefix.pch */,
-				7D46A9DE3306BDAC45B40D533CE9A97C /* Autolycus-umbrella.h */,
-				8B6D406B001C7A1EAA9EBB57B7808225 /* Info.plist */,
+				E17E2748631BE4B8767399BE809E85C7 /* Autolycus.modulemap */,
+				80C540F35DD9F0C3EA932F868B6CC82C /* Autolycus-dummy.m */,
+				D8493D3A7A2EF9BE21231EBC2957E529 /* Autolycus-Info.plist */,
+				66D4639A1ABD43CEC9F84F1F9A98E40D /* Autolycus-prefix.pch */,
+				1DB9E2198E432B890EA7A1F6992D49A9 /* Autolycus-umbrella.h */,
+				F9786E04B8C43EBFB4E372887830AD41 /* Autolycus.debug.xcconfig */,
+				CC33A021C1CA0F8667471CCD5FA73BE9 /* Autolycus.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "Demo/Pods/Target Support Files/Autolycus";
 			sourceTree = "<group>";
 		};
-		1E9A881112CBC6F7D87C261A6147332F /* Development Pods */ = {
+		3A4BF642528943247D48F54C38B9A7A3 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				F6D7FE827F7B6D47153440C02EFB0D51 /* Autolycus */,
+				FDF3B617E59CB7206D3781BC431D928B /* Autolycus.podspec */,
+				A72EA1A0231156615EE2AE72D9E39C76 /* LICENSE */,
+				7730331956A3F05F5D383ED9AF1C9A85 /* README.md */,
 			);
-			name = "Development Pods";
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		2E5C2826C326DE57DE571EF6CAF0BAD2 /* Sources */ = {
+		6375237CAA0D28BD2CA5A761E8AC06E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F1BEF20D1C5DB810715B0C6489F20473 /* AutolycusLogger.swift */,
-				3049F795E68ED30F73F6A962AF58249E /* Logger.swift */,
-				DE390F6AC8534C0453A887F41517C365 /* NSLayoutConstraint+Autolycus.swift */,
-				2738348414180843EFD1C1138C4C5754 /* UIView+Autolycus.swift */,
-			);
-			name = Sources;
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		7CF14CCE12D5A88B4CF170FBA1635717 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BC4EE0C7EF2DE7C71BDD9B4C8B0E2246 /* Autolycus.framework */,
-				3EBD29BD6A1256A9186EE036458FF475 /* Pods_AutolycusDemo.framework */,
+				E2D14CD5FB9AC6A8A6A3B0C4CEA912BE /* Autolycus.framework */,
+				F226F2B40AA666188D5BBA84BE50C7F8 /* Pods_AutolycusDemo.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7DB346D0F39D3F0E887471402A8071AB = {
+		6E851E73C3742CEE8DE4F6B7C64EC27A /* Pods-AutolycusDemo */ = {
 			isa = PBXGroup;
 			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				1E9A881112CBC6F7D87C261A6147332F /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				7CF14CCE12D5A88B4CF170FBA1635717 /* Products */,
-				849D8FC7A7A849864443BCF722D2BB3F /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		849D8FC7A7A849864443BCF722D2BB3F /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D72FF2F0E87E6C966BC9A22C5C7DEF8D /* Pods-AutolycusDemo */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		D72FF2F0E87E6C966BC9A22C5C7DEF8D /* Pods-AutolycusDemo */ = {
-			isa = PBXGroup;
-			children = (
-				308EA05499002E54A2783E3D64B87659 /* Info.plist */,
-				9E3CEDA68D77384A79C434CE6CCBA1AB /* Pods-AutolycusDemo.modulemap */,
-				93E184C60AC75023BD56FBF1CC3492DA /* Pods-AutolycusDemo-acknowledgements.markdown */,
-				4561BD7BD326AE4A465073061C3B2300 /* Pods-AutolycusDemo-acknowledgements.plist */,
-				DA1DE130864FA25AC4B12254F5662C9D /* Pods-AutolycusDemo-dummy.m */,
-				CE5B44D03326799651A5D56A8C1CFE3D /* Pods-AutolycusDemo-frameworks.sh */,
-				71F178944F3B254D35C545D1F3DC42F2 /* Pods-AutolycusDemo-resources.sh */,
-				B71F966F6C2DA8C5FA188B461867CB73 /* Pods-AutolycusDemo-umbrella.h */,
-				5C0900B9745BCC8AB32076DE3B7EB1CB /* Pods-AutolycusDemo.debug.xcconfig */,
-				195EB749E75D91745423223FF1CA17B5 /* Pods-AutolycusDemo.release.xcconfig */,
+				C2E06EC56B068AE34F0D7E6AFB037BEC /* Pods-AutolycusDemo.modulemap */,
+				C2DACCAA5046879964DED457AF7D5123 /* Pods-AutolycusDemo-acknowledgements.markdown */,
+				D2B1F498DE9EF98D227AD2720F446857 /* Pods-AutolycusDemo-acknowledgements.plist */,
+				CE96764A3783D184F87B9CB693D091F7 /* Pods-AutolycusDemo-dummy.m */,
+				B28EE21639799FAA7FA6CA27783F158E /* Pods-AutolycusDemo-frameworks.sh */,
+				5B97C645A6FA01E7D8B6D055BEFCFD45 /* Pods-AutolycusDemo-Info.plist */,
+				1A9FE11AB7B3A034B20E9F736D826259 /* Pods-AutolycusDemo-umbrella.h */,
+				F86CF61D812EC3E4C0942E60EAF265C9 /* Pods-AutolycusDemo.debug.xcconfig */,
+				FA8A19906F19F0E73FBCA3D80C4AFE13 /* Pods-AutolycusDemo.release.xcconfig */,
 			);
 			name = "Pods-AutolycusDemo";
 			path = "Target Support Files/Pods-AutolycusDemo";
 			sourceTree = "<group>";
 		};
-		F6D7FE827F7B6D47153440C02EFB0D51 /* Autolycus */ = {
+		8F19A136858B819138E4CBAF48F3F5F9 /* Autolycus */ = {
 			isa = PBXGroup;
 			children = (
-				2E5C2826C326DE57DE571EF6CAF0BAD2 /* Sources */,
-				10F66B509186B1CB4C37D9D5B0110209 /* Support Files */,
+				C832D17EECC0F9F827930E8B139CFB42 /* AutolycusLogger.swift */,
+				3BDF208C9325B2FADC9E5E0DFAA2840B /* Logger.swift */,
+				14C84BCBEE6109CEBE3670880DE892B0 /* NSLayoutConstraint+Autolycus.swift */,
+				9422CE2C9CB7C8946A642A4C5589F2D8 /* UIView+Autolycus.swift */,
+				3A4BF642528943247D48F54C38B9A7A3 /* Pod */,
+				1A87E57A92AD539D5AFDC1E17F643F44 /* Support Files */,
 			);
 			name = Autolycus;
 			path = ../..;
 			sourceTree = "<group>";
 		};
+		BE1F35A89834EEBE103D0138C7909D38 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F19A136858B819138E4CBAF48F3F5F9 /* Autolycus */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				BE1F35A89834EEBE103D0138C7909D38 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				6375237CAA0D28BD2CA5A761E8AC06E9 /* Products */,
+				ECB232692D86C1029FCE365162E1AD06 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECB232692D86C1029FCE365162E1AD06 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E851E73C3742CEE8DE4F6B7C64EC27A /* Pods-AutolycusDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		E72F771DDDD90EDBDBCC5257A3969D81 /* Headers */ = {
+		3F3FF1A717D7CD17E8D2448DEEEDA269 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13571F5AA42D77198718FC833B5AD8F9 /* Autolycus-umbrella.h in Headers */,
+				419E1E0D235531BACCEA9FCF70E36BB2 /* Autolycus-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FE882D064E05A1EA4FBA31261248E5EE /* Headers */ = {
+		61BA8691B34315D665C6CDE7964CEA35 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2DFE4476D6FCE55B119E12A07FABE53 /* Pods-AutolycusDemo-umbrella.h in Headers */,
+				BB25E2F68328A0713294684311AD14A7 /* Pods-AutolycusDemo-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3D7921A6A760E18E4D51826AEAFC5EC8 /* Pods-AutolycusDemo */ = {
+		D57CE17E109A4BA91E9E1B0A04E9B122 /* Pods-AutolycusDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 848E632BFC5EC9E9278B3CBF6EF6C9B1 /* Build configuration list for PBXNativeTarget "Pods-AutolycusDemo" */;
+			buildConfigurationList = 92EB201948FF4D1CDA179C14F395BC66 /* Build configuration list for PBXNativeTarget "Pods-AutolycusDemo" */;
 			buildPhases = (
-				F25DF0E4CF063BB833C8AE05D732845E /* Sources */,
-				DEE65EDBA976D604C415A4ED9AD82FED /* Frameworks */,
-				FE882D064E05A1EA4FBA31261248E5EE /* Headers */,
+				61BA8691B34315D665C6CDE7964CEA35 /* Headers */,
+				F7A955FB8EDFA71E3F922C1FE3B8A184 /* Sources */,
+				25001D4110837EC6E75331F1F201A86E /* Frameworks */,
+				79952C3308746DC848684A6C95F8BFA7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4BCD6A35EE1870C3B5254513BDBAC956 /* PBXTargetDependency */,
+				EDC2C67F6A55AAD60FFD1F9252229B6F /* PBXTargetDependency */,
 			);
 			name = "Pods-AutolycusDemo";
 			productName = "Pods-AutolycusDemo";
-			productReference = 3EBD29BD6A1256A9186EE036458FF475 /* Pods_AutolycusDemo.framework */;
+			productReference = F226F2B40AA666188D5BBA84BE50C7F8 /* Pods_AutolycusDemo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F04F4A5AA77C5EBED9F3D821CBEB2464 /* Autolycus */ = {
+		EC4C314B0A8C23DAEFCEA70AF2ACEF72 /* Autolycus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B81B4DFD369A2E56505632904ACDE98 /* Build configuration list for PBXNativeTarget "Autolycus" */;
+			buildConfigurationList = 110143A1AD1AD9D7E2046BB93AA4FF85 /* Build configuration list for PBXNativeTarget "Autolycus" */;
 			buildPhases = (
-				5A92C0568763C2489BFD1DEC34B3A0CD /* Sources */,
-				DC4E60DB8F06CAAEB5533BC5AE0DAA7D /* Frameworks */,
-				E72F771DDDD90EDBDBCC5257A3969D81 /* Headers */,
+				3F3FF1A717D7CD17E8D2448DEEEDA269 /* Headers */,
+				C789043EF212D4A8D28CD7F49891AF91 /* Sources */,
+				A05149B477EB213645E50E1AF4523159 /* Frameworks */,
+				C8AB80ED3568E58B98CFFE976EF85B9C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -236,300 +243,338 @@
 			);
 			name = Autolycus;
 			productName = Autolycus;
-			productReference = BC4EE0C7EF2DE7C71BDD9B4C8B0E2246 /* Autolycus.framework */;
+			productReference = E2D14CD5FB9AC6A8A6A3B0C4CEA912BE /* Autolycus.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7CF14CCE12D5A88B4CF170FBA1635717 /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 6375237CAA0D28BD2CA5A761E8AC06E9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F04F4A5AA77C5EBED9F3D821CBEB2464 /* Autolycus */,
-				3D7921A6A760E18E4D51826AEAFC5EC8 /* Pods-AutolycusDemo */,
+				EC4C314B0A8C23DAEFCEA70AF2ACEF72 /* Autolycus */,
+				D57CE17E109A4BA91E9E1B0A04E9B122 /* Pods-AutolycusDemo */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		5A92C0568763C2489BFD1DEC34B3A0CD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		79952C3308746DC848684A6C95F8BFA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2ED85304162ECE3144AE6FD935AC30C /* Autolycus-dummy.m in Sources */,
-				3F09C1ECE0E829F871C496D68561FE81 /* AutolycusLogger.swift in Sources */,
-				6F6E242F5AE920B615B4F386E331CB44 /* Logger.swift in Sources */,
-				23C6515D5160027CFA76BB92AF7122E3 /* NSLayoutConstraint+Autolycus.swift in Sources */,
-				A17E04B40B5D8A62409309DD94EFCBA1 /* UIView+Autolycus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F25DF0E4CF063BB833C8AE05D732845E /* Sources */ = {
+		C8AB80ED3568E58B98CFFE976EF85B9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C789043EF212D4A8D28CD7F49891AF91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9682882C78787D01052AC0DA8698EC7D /* Pods-AutolycusDemo-dummy.m in Sources */,
+				E8628EDFCCA0EB220414875A49E2F071 /* Autolycus-dummy.m in Sources */,
+				C6173425E24AD805FEDBCF951D0CBC13 /* AutolycusLogger.swift in Sources */,
+				651BDF538D8288B86DE152AB370A4CEC /* Logger.swift in Sources */,
+				CF60F88F310CDC835AF15A88D06C0ADC /* NSLayoutConstraint+Autolycus.swift in Sources */,
+				EAE107F90728EFE095B0F148FD0446A2 /* UIView+Autolycus.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A955FB8EDFA71E3F922C1FE3B8A184 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79541F8C2B89991B4B20ED0747D2F012 /* Pods-AutolycusDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4BCD6A35EE1870C3B5254513BDBAC956 /* PBXTargetDependency */ = {
+		EDC2C67F6A55AAD60FFD1F9252229B6F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Autolycus;
-			target = F04F4A5AA77C5EBED9F3D821CBEB2464 /* Autolycus */;
-			targetProxy = C1C9E519E75B40AC5170F44D4B972E34 /* PBXContainerItemProxy */;
+			target = EC4C314B0A8C23DAEFCEA70AF2ACEF72 /* Autolycus */;
+			targetProxy = 66F982807AEFA3DF56E68359D591E15F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		25E1CCA97C086C3F5DD460BAB4D9B964 /* Release */ = {
+		025B70B4894ECE38EF4F0FA3D6EBAB4E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 195EB749E75D91745423223FF1CA17B5 /* Pods-AutolycusDemo.release.xcconfig */;
+			baseConfigurationReference = CC33A021C1CA0F8667471CCD5FA73BE9 /* Autolycus.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-AutolycusDemo/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-AutolycusDemo/Pods-AutolycusDemo.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_AutolycusDemo;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5B6638F8E47C634B86618AA0890F9FF3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB2C4C2832F26F7EDDB04F7ADF62DDAE /* Autolycus.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Autolycus/Autolycus-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Autolycus/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Autolycus/Autolycus-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Autolycus/Autolycus.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = Autolycus;
 				PRODUCT_NAME = Autolycus;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		5C61378642C47FCEBDD4F5B92DF33557 /* Debug */ = {
+		0BDFEAC2E62DA5B970594C5E2F93F321 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C0900B9745BCC8AB32076DE3B7EB1CB /* Pods-AutolycusDemo.debug.xcconfig */;
+			baseConfigurationReference = F86CF61D812EC3E4C0942E60EAF265C9 /* Pods-AutolycusDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-AutolycusDemo/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-AutolycusDemo/Pods-AutolycusDemo-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-AutolycusDemo/Pods-AutolycusDemo.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_AutolycusDemo;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		643C76AA582046977B7877822ED7A258 /* Debug */ = {
+		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		C03B8870130C98D1B02B59D003687524 /* Release */ = {
+		A22762D9E396FE09E4B9BF1D3B52F00D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA8A19906F19F0E73FBCA3D80C4AFE13 /* Pods-AutolycusDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		EAFF25CA945C4A924D65000F6F7445EA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB2C4C2832F26F7EDDB04F7ADF62DDAE /* Autolycus.xcconfig */;
-			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-AutolycusDemo/Pods-AutolycusDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AutolycusDemo/Pods-AutolycusDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		F478C8EC3A8D4FC81550AB05565D1985 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9786E04B8C43EBFB4E372887830AD41 /* Autolycus.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREFIX_HEADER = "Target Support Files/Autolycus/Autolycus-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Autolycus/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Autolycus/Autolycus-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Autolycus/Autolycus.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_MODULE_NAME = Autolycus;
 				PRODUCT_NAME = Autolycus;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -540,34 +585,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		110143A1AD1AD9D7E2046BB93AA4FF85 /* Build configuration list for PBXNativeTarget "Autolycus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				643C76AA582046977B7877822ED7A258 /* Debug */,
-				C03B8870130C98D1B02B59D003687524 /* Release */,
+				F478C8EC3A8D4FC81550AB05565D1985 /* Debug */,
+				025B70B4894ECE38EF4F0FA3D6EBAB4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B81B4DFD369A2E56505632904ACDE98 /* Build configuration list for PBXNativeTarget "Autolycus" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EAFF25CA945C4A924D65000F6F7445EA /* Debug */,
-				5B6638F8E47C634B86618AA0890F9FF3 /* Release */,
+				196DFA3E4A09A28224918543529A1885 /* Debug */,
+				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		848E632BFC5EC9E9278B3CBF6EF6C9B1 /* Build configuration list for PBXNativeTarget "Pods-AutolycusDemo" */ = {
+		92EB201948FF4D1CDA179C14F395BC66 /* Build configuration list for PBXNativeTarget "Pods-AutolycusDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5C61378642C47FCEBDD4F5B92DF33557 /* Debug */,
-				25E1CCA97C086C3F5DD460BAB4D9B964 /* Release */,
+				0BDFEAC2E62DA5B970594C5E2F93F321 /* Debug */,
+				A22762D9E396FE09E4B9BF1D3B52F00D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }
