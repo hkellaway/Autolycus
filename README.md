@@ -1,6 +1,6 @@
 # Autolycus :triangular_ruler:
 
-![Swift version](https://img.shields.io/badge/Swift-4.0-orange.svg)
+![Swift version](https://img.shields.io/badge/Swift-5.0-orange.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/badge/License-MIT-lightgray.svg)](https://raw.githubusercontent.com/hkellaway/Autolycus/master/LICENSE)
 [![Build Status](https://travis-ci.org/hkellaway/Autolycus.svg?branch=develop)](https://travis-ci.org/hkellaway/Autolycus)
@@ -14,7 +14,7 @@ Autolayout DSL for writing layout and constraints programmatically.
 ### Installation with CocoaPods
 
 ```ruby
-pod 'Autolycus', :git => 'git@github.com:hkellaway/Autolycus.git', :tag => '0.1.0'
+pod 'Autolycus', :git => 'git@github.com:hkellaway/Autolycus.git', :tag => '0.2.0'
 ```
 
 ### Installation with Carthage
