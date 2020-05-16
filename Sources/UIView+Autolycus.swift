@@ -32,7 +32,7 @@ public extension UIView {
     ///
     /// - Returns: View instance acted upon.
     @discardableResult
-    public func constrain() -> Self {
+    func constrain() -> Self {
         translatesAutoresizingMaskIntoConstraints = false
         return self
     }
@@ -41,7 +41,7 @@ public extension UIView {
     /// i.e. If translatesAutoresizingMaskIntoConstraints is false.
     ///
     /// - Returns: View instance acted upon.
-    public func isPreparedForAutoLayout() -> Bool {
+    func isPreparedForAutoLayout() -> Bool {
         return !translatesAutoresizingMaskIntoConstraints
     }
     
@@ -59,7 +59,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func centerX(to view: UIView,
+    func centerX(to view: UIView,
                         anchor: NSLayoutXAxisAnchor? = nil,
                         offset: CGFloat = 0,
                         priority: UILayoutPriority = .required,
@@ -85,7 +85,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func centerY(to view: UIView,
+    func centerY(to view: UIView,
                         anchor: NSLayoutYAxisAnchor? = nil,
                         offset: CGFloat = 0,
                         priority: UILayoutPriority = .required,
@@ -109,7 +109,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func inCenter(of view: UIView,
+    func inCenter(of view: UIView,
                          offset: CGPoint = .zero,
                          priority: UILayoutPriority = .required,
                          isActive: Bool = true,
@@ -141,7 +141,7 @@ public extension UIView {
     ///   - logger:  Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func edges(to view: UIView,
+    func edges(to view: UIView,
                       insets: UIEdgeInsets = .zero,
                       priority: UILayoutPriority = .required,
                       isActive: Bool = true,
@@ -174,7 +174,7 @@ public extension UIView {
     ///   - logger:  Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func size(_ size: CGSize,
+    func size(_ size: CGSize,
                      priority: UILayoutPriority = .required,
                      isActive: Bool = true,
                      logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
@@ -206,7 +206,7 @@ public extension UIView {
     ///   - logger:  Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func size(of view: UIView,
+    func size(of view: UIView,
                      multiplier: CGFloat = 1,
                      offset: CGFloat = 0,
                      priority: UILayoutPriority = .required,
@@ -239,7 +239,7 @@ public extension UIView {
     ///   - logger:  Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func origin(to view: UIView,
+    func origin(to view: UIView,
                        insets: CGVector = .zero,
                        priority: UILayoutPriority = .required,
                        isActive: Bool = true,
@@ -270,7 +270,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraint.
     @discardableResult
-    public func width(_ width: CGFloat,
+    func width(_ width: CGFloat,
                       priority: UILayoutPriority = .required,
                       isActive: Bool = true,
                       logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -295,11 +295,11 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraint.
     @discardableResult
-    public func width(to view: UIView,
+    func width(to view: UIView,
                       dimension: NSLayoutDimension? = nil,
                       multiplier: CGFloat = 1,
                       offset: CGFloat = 0,
-                      relation: NSLayoutRelation = .equal,
+                      relation: NSLayoutConstraint.Relation = .equal,
                       priority: UILayoutPriority = .required,
                       isActive: Bool = true,
                       logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -315,6 +315,8 @@ public extension UIView {
             return widthAnchor.constraint(lessThanOrEqualTo: dimension ?? view.widthAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return widthAnchor.constraint(greaterThanOrEqualTo: dimension ?? view.widthAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -328,7 +330,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func width(min: CGFloat? = nil,
+    func width(min: CGFloat? = nil,
                       max: CGFloat? = nil,
                       priority: UILayoutPriority = .required,
                       isActive: Bool = true,
@@ -364,7 +366,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraint.
     @discardableResult
-    public func height(_ height: CGFloat,
+    func height(_ height: CGFloat,
                        priority: UILayoutPriority = .required,
                        isActive: Bool = true,
                        logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -389,11 +391,11 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraint.
     @discardableResult
-    public func height(to view: UIView,
+    func height(to view: UIView,
                        dimension: NSLayoutDimension? = nil,
                        multiplier: CGFloat = 1,
                        offset: CGFloat = 0,
-                       relation: NSLayoutRelation = .equal,
+                       relation: NSLayoutConstraint.Relation = .equal,
                        priority: UILayoutPriority = .required,
                        isActive: Bool = true,
                        logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -409,6 +411,8 @@ public extension UIView {
             return heightAnchor.constraint(lessThanOrEqualTo: dimension ?? view.heightAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return heightAnchor.constraint(greaterThanOrEqualTo: dimension ?? view.heightAnchor, multiplier: multiplier, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -422,7 +426,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func height(min: CGFloat? = nil,
+    func height(min: CGFloat? = nil,
                        max: CGFloat? = nil,
                        priority: UILayoutPriority = .required,
                        isActive: Bool = true,
@@ -460,9 +464,9 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func leadingToTrailing(of view: UIView,
+    func leadingToTrailing(of view: UIView,
                                   offset: CGFloat = 0,
-                                  relation: NSLayoutRelation = .equal,
+                                  relation: NSLayoutConstraint.Relation = .equal,
                                   priority: UILayoutPriority = .required,
                                   isActive: Bool = true,
                                   logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -486,10 +490,10 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func leading(to view: UIView,
+    func leading(to view: UIView,
                         anchor: NSLayoutXAxisAnchor? = nil,
                         offset: CGFloat = 0,
-                        relation: NSLayoutRelation = .equal,
+                        relation: NSLayoutConstraint.Relation = .equal,
                         priority: UILayoutPriority = .required,
                         isActive: Bool = true,
                         logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -505,6 +509,8 @@ public extension UIView {
             return leadingAnchor.constraint(lessThanOrEqualTo: anchor ?? view.leadingAnchor, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return leadingAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.leadingAnchor, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -519,9 +525,9 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func leftToRight(of view: UIView,
+    func leftToRight(of view: UIView,
                             offset: CGFloat = 0,
-                            relation: NSLayoutRelation = .equal,
+                            relation: NSLayoutConstraint.Relation = .equal,
                             priority: UILayoutPriority = .required,
                             isActive: Bool = true,
                             logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -545,10 +551,10 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func left(to view: UIView,
+    func left(to view: UIView,
                         anchor: NSLayoutXAxisAnchor? = nil,
                         offset: CGFloat = 0,
-                        relation: NSLayoutRelation = .equal,
+                        relation: NSLayoutConstraint.Relation = .equal,
                         priority: UILayoutPriority = .required,
                         isActive: Bool = true,
                         logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -564,6 +570,8 @@ public extension UIView {
             return leftAnchor.constraint(lessThanOrEqualTo: anchor ?? view.leftAnchor, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return leftAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.leftAnchor, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -578,9 +586,9 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func trailingToLeading(of view: UIView,
+    func trailingToLeading(of view: UIView,
                                   offset: CGFloat = 0,
-                                  relation: NSLayoutRelation = .equal,
+                                  relation: NSLayoutConstraint.Relation = .equal,
                                   priority: UILayoutPriority = .required,
                                   isActive: Bool = true,
                                   logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -604,10 +612,10 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func trailing(to view: UIView,
+    func trailing(to view: UIView,
                          anchor: NSLayoutXAxisAnchor? = nil,
                          offset: CGFloat = 0,
-                         relation: NSLayoutRelation = .equal,
+                         relation: NSLayoutConstraint.Relation = .equal,
                          priority: UILayoutPriority = .required,
                          isActive: Bool = true,
                          logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -623,6 +631,8 @@ public extension UIView {
             return trailingAnchor.constraint(lessThanOrEqualTo: anchor ?? view.trailingAnchor, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return trailingAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.trailingAnchor, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -637,9 +647,9 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func rightToLeft(of view: UIView,
+    func rightToLeft(of view: UIView,
                             offset: CGFloat = 0,
-                            relation: NSLayoutRelation = .equal,
+                            relation: NSLayoutConstraint.Relation = .equal,
                             priority: UILayoutPriority = .required,
                             isActive: Bool = true,
                             logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -663,10 +673,10 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func right(to view: UIView,
+    func right(to view: UIView,
                       anchor: NSLayoutXAxisAnchor? = nil,
                       offset: CGFloat = 0,
-                      relation: NSLayoutRelation = .equal,
+                      relation: NSLayoutConstraint.Relation = .equal,
                       priority: UILayoutPriority = .required,
                       isActive: Bool = true,
                       logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -682,6 +692,8 @@ public extension UIView {
             return rightAnchor.constraint(lessThanOrEqualTo: anchor ?? view.rightAnchor, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return rightAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.rightAnchor, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -696,9 +708,9 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func topToBottom(of view: UIView,
+    func topToBottom(of view: UIView,
                             offset: CGFloat = 0,
-                            relation: NSLayoutRelation = .equal,
+                            relation: NSLayoutConstraint.Relation = .equal,
                             priority: UILayoutPriority = .required,
                             isActive: Bool = true,
                             logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -722,10 +734,10 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func top(to view: UIView,
+    func top(to view: UIView,
                       anchor: NSLayoutYAxisAnchor? = nil,
                       offset: CGFloat = 0,
-                      relation: NSLayoutRelation = .equal,
+                      relation: NSLayoutConstraint.Relation = .equal,
                       priority: UILayoutPriority = .required,
                       isActive: Bool = true,
                       logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -741,6 +753,8 @@ public extension UIView {
             return topAnchor.constraint(lessThanOrEqualTo: anchor ?? view.topAnchor, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return topAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.topAnchor, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -755,9 +769,9 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func bottomToTop(of view: UIView,
+    func bottomToTop(of view: UIView,
                             offset: CGFloat = 0,
-                            relation: NSLayoutRelation = .equal,
+                            relation: NSLayoutConstraint.Relation = .equal,
                             priority: UILayoutPriority = .required,
                             isActive: Bool = true,
                             logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -781,10 +795,10 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func bottom(to view: UIView,
+    func bottom(to view: UIView,
                        anchor: NSLayoutYAxisAnchor? = nil,
                        offset: CGFloat = 0,
-                       relation: NSLayoutRelation = .equal,
+                       relation: NSLayoutConstraint.Relation = .equal,
                        priority: UILayoutPriority = .required,
                        isActive: Bool = true,
                        logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -800,6 +814,8 @@ public extension UIView {
             return bottomAnchor.constraint(lessThanOrEqualTo: anchor ?? view.bottomAnchor, constant: offset).priority(priority).activate(isActive)
         case .greaterThanOrEqual:
             return bottomAnchor.constraint(greaterThanOrEqualTo: anchor ?? view.bottomAnchor, constant: offset).priority(priority).activate(isActive)
+        @unknown default:
+            fatalError()
         }
     }
     
@@ -817,7 +833,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func centerXToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
+    func centerXToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
                                    offset: CGFloat = 0,
                                    priority: UILayoutPriority = .required,
                                    isActive: Bool = true,
@@ -842,7 +858,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func centerYToSuperview(_ anchor: NSLayoutYAxisAnchor? = nil,
+    func centerYToSuperview(_ anchor: NSLayoutYAxisAnchor? = nil,
                                    offset: CGFloat = 0,
                                    priority: UILayoutPriority = .required,
                                    isActive: Bool = true,
@@ -864,7 +880,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func centerInSuperview(offset: CGPoint = .zero,
+    func centerInSuperview(offset: CGPoint = .zero,
                                   priority: UILayoutPriority = .required,
                                   isActive: Bool = true,
                                   logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
@@ -885,7 +901,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func edgesToSuperview(insets: UIEdgeInsets = .zero,
+    func edgesToSuperview(insets: UIEdgeInsets = .zero,
                                  priority: UILayoutPriority = .required,
                                  isActive: Bool = true,
                                  logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
@@ -907,7 +923,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func sizeOfSuperview(multiplier: CGFloat = 1,
+    func sizeOfSuperview(multiplier: CGFloat = 1,
                                 offset: CGFloat = 0,
                                 priority: UILayoutPriority = .required,
                                 isActive: Bool = true,
@@ -929,7 +945,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constriants.
     @discardableResult
-    public func originToSuperview(insets: CGVector = .zero,
+    func originToSuperview(insets: CGVector = .zero,
                                   priority: UILayoutPriority = .required,
                                   isActive: Bool = true,
                                   logger: Logger = AutolycusLogger.shared) -> [NSLayoutConstraint] {
@@ -953,10 +969,10 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func widthToSuperview( _ dimension: NSLayoutDimension? = nil,
+    func widthToSuperview( _ dimension: NSLayoutDimension? = nil,
                                   multiplier: CGFloat = 1,
                                   offset: CGFloat = 0,
-                                  relation: NSLayoutRelation = .equal,
+                                  relation: NSLayoutConstraint.Relation = .equal,
                                   priority: UILayoutPriority = .required,
                                   isActive: Bool = true,
                                   logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -980,10 +996,10 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func heightToSuperview( _ dimension: NSLayoutDimension? = nil,
+    func heightToSuperview( _ dimension: NSLayoutDimension? = nil,
                                    multiplier: CGFloat = 1,
                                    offset: CGFloat = 0,
-                                   relation: NSLayoutRelation = .equal,
+                                   relation: NSLayoutConstraint.Relation = .equal,
                                    priority: UILayoutPriority = .required,
                                    isActive: Bool = true,
                                    logger: Logger = AutolycusLogger.shared) -> NSLayoutConstraint {
@@ -1006,7 +1022,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func leadingToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
+    func leadingToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
                                    offset: CGFloat = 0,
                                    priority: UILayoutPriority = .required,
                                    isActive: Bool = true,
@@ -1030,7 +1046,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func leftToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
+    func leftToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
                                 offset: CGFloat = 0,
                                 priority: UILayoutPriority = .required,
                                 isActive: Bool = true,
@@ -1054,7 +1070,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func trailingToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
+    func trailingToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
                                     offset: CGFloat = 0,
                                     priority: UILayoutPriority = .required,
                                     isActive: Bool = true,
@@ -1078,7 +1094,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func rightToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
+    func rightToSuperview(_ anchor: NSLayoutXAxisAnchor? = nil,
                                  offset: CGFloat = 0,
                                  priority: UILayoutPriority = .required,
                                  isActive: Bool = true,
@@ -1102,7 +1118,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func topToSuperview(_ anchor: NSLayoutYAxisAnchor? = nil,
+    func topToSuperview(_ anchor: NSLayoutYAxisAnchor? = nil,
                                offset: CGFloat = 0,
                                priority: UILayoutPriority = .required,
                                isActive: Bool = true,
@@ -1126,7 +1142,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: Constraints.
     @discardableResult
-    public func bottomToSuperview(_ anchor: NSLayoutYAxisAnchor? = nil,
+    func bottomToSuperview(_ anchor: NSLayoutYAxisAnchor? = nil,
                                   offset: CGFloat = 0,
                                   priority: UILayoutPriority = .required,
                                   isActive: Bool = true,
@@ -1148,7 +1164,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: View instance acted upon.
     @discardableResult
-    public func toWidth(_ value: CGFloat,
+    func toWidth(_ value: CGFloat,
                         logger: Logger = AutolycusLogger.shared) -> Self {
         width(value)
         return self
@@ -1161,7 +1177,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: View instance acted upon.
     @discardableResult
-    public func toHeight(_ value: CGFloat,
+    func toHeight(_ value: CGFloat,
                          logger: Logger = AutolycusLogger.shared) -> Self {
         height(value, logger: logger)
         return self
@@ -1174,7 +1190,7 @@ public extension UIView {
     ///   - logger: Logger for issues enacting constraints.
     /// - Returns: View instance acted upon.
     @discardableResult
-    public func toSize(_ sizeValue: CGSize,
+    func toSize(_ sizeValue: CGSize,
                        logger: Logger = AutolycusLogger.shared) -> Self {
         size(sizeValue, logger: logger)
         return self
